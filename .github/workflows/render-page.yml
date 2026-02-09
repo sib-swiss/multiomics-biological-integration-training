@@ -20,7 +20,7 @@ jobs:
   publish-site:
     runs-on: ubuntu-latest
     container:
-      image: sibswiss/training-biology-informed-multiomics-rstudio:latest
+      image: sibswiss/training-multiomics-biological-integration-rstudio:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
