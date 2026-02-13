@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Biology-informed Multiomics Data Integration and Visualization</title>
+<title>Biology-informed Integration and Visualization of Multiomics Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Biology-informed Multiomics Data Integration and Visualization</span>
+    <span class="navbar-title">Biology-informed Integration and Visualization of Multiomics Data</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -143,15 +143,49 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Exercise 6</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day2/day2-4_enrichment_analysis.html">
+    <a class="dropdown-item" href="./day2/day2-4_enrichment_analysis.qmd">
+ <span class="dropdown-text"></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-3" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">day 3</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">    
+        <li>
+    <a class="dropdown-item" href="./day3/day3-1_enrichment_analysis.html">
  <span class="dropdown-text">Exercise 7</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="./projects/introduction.html">
+ <span class="dropdown-text">Introduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projects/project1.html">
+ <span class="dropdown-text">Project 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projects/project2.html">
+ <span class="dropdown-text">Project 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projects/project3.html">
+ <span class="dropdown-text">Project 3</span></a>
   </li>  
     </ul>
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sib-swiss/biology-informed-multiomics-training"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/sib-swiss/multiomics-biological-integration-training"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -166,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Biology-informed Multiomics Data Integration and Visualization</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Biology-informed Integration and Visualization of Multiomics Data</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -190,8 +224,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#teachers" id="toc-teachers" class="nav-link active" data-scroll-target="#teachers">Teachers</a></li>
-  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors">Authors</a></li>
+  <li><a href="#teacher" id="toc-teacher" class="nav-link active" data-scroll-target="#teacher">Teacher</a></li>
+  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
   <li><a href="#helper" id="toc-helper" class="nav-link" data-scroll-target="#helper">Helper</a></li>
   <li><a href="#license-copyright" id="toc-license-copyright" class="nav-link" data-scroll-target="#license-copyright">License &amp; copyright</a></li>
   <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a>
@@ -211,7 +245,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Biology-informed Multiomics Data Integration and Visualization</h1>
+<h1 class="title">Biology-informed Integration and Visualization of Multiomics Data</h1>
 </div>
 
 
@@ -231,18 +265,16 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <img src="assets/images/course_logo.png" width="780" class="figure-img">
 </figure>
-<section id="teachers" class="level2">
-<h2 class="anchored" data-anchor-id="teachers">Teachers</h2>
+<section id="teacher" class="level2">
+<h2 class="anchored" data-anchor-id="teacher">Teacher</h2>
 <ul>
 <li>Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989">ORCiD</a></li>
 </ul>
 </section>
-<section id="authors" class="level2">
-<h2 class="anchored" data-anchor-id="authors">Authors</h2>
+<section id="author" class="level2">
+<h2 class="anchored" data-anchor-id="author">Author</h2>
 <ul>
 <li>Deepak Tanwar <a href="https://orcid.org/0000-0001-8036-1989">ORCiD</a></li>
-<li>Geert van Geest <a href="https://orcid.org/0000-0002-1561-078X">ORCiD</a></li>
-<li>Patricia Palagi <a href="https://orcid.org/0000-0001-9062-6303">ORCiD</a></li>
 </ul>
 </section>
 <section id="helper" class="level2">
@@ -262,10 +294,11 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="general-learning-outcomes">General learning outcomes</h3>
 <p>At the end of the course, the participants are expected to:</p>
 <ul>
-<li>Import and integrate pre-processed ATAC-seq, RNA-seq, ChIP-seq, and Bisulfite-seq data using <code>R</code> and Bioconductor packages.</li>
-<li>Generate and interpret overlap matrices to identify regions of co-occurrence and regulation.</li>
-<li>Perform functional analysis of the results.</li>
-<li>Create informative and visually appealing plots to represent multi-omics data.</li>
+<li>Explain the conceptual basis and necessary data structures for integrating ATAC-seq, RNA-seq, ChIP-seq, and bisulphite-seq.</li>
+<li>Execute the full pipeline to import, normalize, and integrate pre-processed multiomics data using R and Bioconductor packages.</li>
+<li>Differentiate and compare the results obtained from functional analysis methods to identify key regulated regions.</li>
+<li>Design and generate advanced visualisations, for example enriched heatmaps, to effectively communicate the complex findings of multiomics data integration.</li>
+<li>Lead the analysis and biological interpretation of a multiomics dataset, functioning as a culminating, challenging application of the entire workflow.</li>
 </ul>
 </section>
 <section id="learning-outcomes-explained" class="level3">

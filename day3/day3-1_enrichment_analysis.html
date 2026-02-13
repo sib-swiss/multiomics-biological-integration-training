@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Precourse preparations – Biology-informed Integration and Visualization of Multiomics Data</title>
+<title>Exercise 7 – Biology-informed Integration and Visualization of Multiomics Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/SIB_logo.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/SIB_logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Biology-informed Integration and Visualization of Multiomics Data</span>
     </a>
   </div>
@@ -95,15 +130,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./precourse_preparations.html" aria-current="page"> 
+    <a class="nav-link" href="../precourse_preparations.html"> 
 <span class="menu-text">Precourse preparations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_schedule.html"> 
+    <a class="nav-link" href="../course_schedule.html"> 
 <span class="menu-text">Course schedule</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -112,15 +147,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-day-1">    
         <li>
-    <a class="dropdown-item" href="./day1/day1-1_dataset.html">
+    <a class="dropdown-item" href="../day1/day1-1_dataset.html">
  <span class="dropdown-text">Exercise 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day1/day1-2_atac.html">
+    <a class="dropdown-item" href="../day1/day1-2_atac.html">
  <span class="dropdown-text">Exercise 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day1/day1-3_chip_rna.html">
+    <a class="dropdown-item" href="../day1/day1-3_chip_rna.html">
  <span class="dropdown-text">Exercise 3</span></a>
   </li>  
     </ul>
@@ -131,19 +166,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-day-2">    
         <li>
-    <a class="dropdown-item" href="./day2/day2-1_overlap_matrix.html">
+    <a class="dropdown-item" href="../day2/day2-1_overlap_matrix.html">
  <span class="dropdown-text">Exercise 4</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day2/day2-2_atac_rna.html">
+    <a class="dropdown-item" href="../day2/day2-2_atac_rna.html">
  <span class="dropdown-text">Exercise 5</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day2/day2-3_multiomics.html">
+    <a class="dropdown-item" href="../day2/day2-3_multiomics.html">
  <span class="dropdown-text">Exercise 6</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./day2/day2-4_enrichment_analysis.qmd">
+    <a class="dropdown-item" href="../day2/day2-4_enrichment_analysis.qmd">
  <span class="dropdown-text"></span></a>
   </li>  
     </ul>
@@ -154,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">    
         <li>
-    <a class="dropdown-item" href="./day3/day3-1_enrichment_analysis.html">
+    <a class="dropdown-item" href="../day3/day3-1_enrichment_analysis.html">
  <span class="dropdown-text">Exercise 7</span></a>
   </li>  
     </ul>
@@ -165,19 +200,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="./projects/introduction.html">
+    <a class="dropdown-item" href="../projects/introduction.html">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/project1.html">
+    <a class="dropdown-item" href="../projects/project1.html">
  <span class="dropdown-text">Project 1</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/project2.html">
+    <a class="dropdown-item" href="../projects/project2.html">
  <span class="dropdown-text">Project 2</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/project3.html">
+    <a class="dropdown-item" href="../projects/project3.html">
  <span class="dropdown-text">Project 3</span></a>
   </li>  
     </ul>
@@ -200,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Precourse preparations</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Exercise 7</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -211,9 +246,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
 </nav>
@@ -224,11 +259,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-competences" id="toc-required-competences" class="nav-link active" data-scroll-target="#required-competences">Required competences</a>
+  <li><a href="#enrichment-analysis" id="toc-enrichment-analysis" class="nav-link active" data-scroll-target="#enrichment-analysis">Enrichment analysis</a>
   <ul class="collapse">
-  <li><a href="#knowledge" id="toc-knowledge" class="nav-link" data-scroll-target="#knowledge">Knowledge</a></li>
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries">Load Libraries</a></li>
+  <li><a href="#overlapmatrix" id="toc-overlapmatrix" class="nav-link" data-scroll-target="#overlapmatrix">OverlapMatrix</a></li>
+  <li><a href="#running-enrichment-analysis-on-regions-of-our-interest" id="toc-running-enrichment-analysis-on-regions-of-our-interest" class="nav-link" data-scroll-target="#running-enrichment-analysis-on-regions-of-our-interest">Running enrichment analysis on regions of our interest</a>
+  <ul class="collapse">
+  <li><a href="#subset-the-granges" id="toc-subset-the-granges" class="nav-link" data-scroll-target="#subset-the-granges">subset the <code>GRanges</code></a></li>
+  <li><a href="#running-enrichment-analysis" id="toc-running-enrichment-analysis" class="nav-link" data-scroll-target="#running-enrichment-analysis">Running enrichment analysis</a></li>
   </ul></li>
-  <li><a href="#technical" id="toc-technical" class="nav-link" data-scroll-target="#technical">Technical</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#volcano-plot" id="toc-volcano-plot" class="nav-link" data-scroll-target="#volcano-plot">Volcano plot</a></li>
+  <li><a href="#regions-gene-assiciation-plot" id="toc-regions-gene-assiciation-plot" class="nav-link" data-scroll-target="#regions-gene-assiciation-plot">Regions-gene assiciation plot</a></li>
+  <li><a href="#there-is-a-shiny-application-to-explore-the-results" id="toc-there-is-a-shiny-application-to-explore-the-results" class="nav-link" data-scroll-target="#there-is-a-shiny-application-to-explore-the-results">There is a <code>shiny</code> application to explore the results</a></li>
+  <li><a href="#simplyfied-representation-of-go-terms" id="toc-simplyfied-representation-of-go-terms" class="nav-link" data-scroll-target="#simplyfied-representation-of-go-terms">Simplyfied representation of GO terms</a></li>
+  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -237,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Precourse preparations</h1>
+<h1 class="title">Exercise 7</h1>
 </div>
 
 
@@ -254,24 +304,251 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="required-competences" class="level2">
-<h2 class="anchored" data-anchor-id="required-competences">Required competences</h2>
-<section id="knowledge" class="level3">
-<h3 class="anchored" data-anchor-id="knowledge">Knowledge</h3>
-<p>You should meet the learning outcomes of <a href="https://www.sib.swiss/training/course/20250203_FSWR">First Steps with <code>R</code> in Life Sciences</a>.</p>
-<p>While this course is designed for beginners in multiomics data integration, knowledge of fundamental biological concepts related to gene expression (RNA-seq), chromatin accessibility (ATAC-seq), histone modifications (ChIP-seq), and DNA methylation is highly recommended. Basic to intermediate <code>R</code> programming skills are required as participants will be challenged with more coding and interpretation exercises. We recommend you can confidently handle data manipulation and basic functions in <code>R</code>. Please evaluate your <code>R</code> skills <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIyeuabd_ZOWXgI1MWHapmaOMu20L9ESkLDZiWnpmkpujyOg/viewform?usp=sf_link">here</a>.</p>
+<section id="enrichment-analysis" class="level1">
+<h1>Enrichment analysis</h1>
+<section id="load-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rGREAT)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TxDb.Mmusculus.UCSC.mm10.knownGene)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(org.Mm.eg.db)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(simplifyEnrichment)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flexclust)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="overlapmatrix" class="level2">
+<h2 class="anchored" data-anchor-id="overlapmatrix">OverlapMatrix</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>overlap <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/overlap_anno2.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We have several cluster of genomic activities. We will run enrichment analysis of regions from one of them, “Active Promoters”.</p>
+</section>
+<section id="running-enrichment-analysis-on-regions-of-our-interest" class="level2">
+<h2 class="anchored" data-anchor-id="running-enrichment-analysis-on-regions-of-our-interest">Running enrichment analysis on regions of our interest</h2>
+<section id="subset-the-granges" class="level3">
+<h3 class="anchored" data-anchor-id="subset-the-granges">subset the <code>GRanges</code></h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gr <span class="ot">&lt;-</span> overlap[overlap<span class="sc">$</span>ATAC_RNA <span class="sc">==</span> <span class="st">"Active Promoters"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seqlevels</span>(gr) <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(<span class="fu">seqnames</span>(gr)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="running-enrichment-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="running-enrichment-analysis">Running enrichment analysis</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">great</span>(<span class="at">gr =</span> gr, <span class="at">gene_sets =</span> <span class="st">"BP"</span>, <span class="at">tss_source =</span> <span class="st">"mm10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* TSS source: TxDb.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* check whether TxDb package 'TxDb.Mmusculus.UCSC.mm10.knownGene' is installed.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* gene ID type in the extended TSS is 'Entrez Gene ID'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* restrict chromosomes to 'chr1, chr2, chr3, chr4, chr5, chr6, chr7, chr8, chr9, chr10,
+    chr11, chr12, chr13, chr14, chr15, chr16, chr17, chr18, chr19, chrX, chrY, chrM'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* 20598/24515 protein-coding genes left.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* update seqinfo to the selected chromosomes.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* TSS extension mode is 'basalPlusExt'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* construct the basal domains by extending 5000bp to upstream and 1000bp to downsteram of TSS.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* calculate distances to neighbour regions.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* extend to both sides until reaching the neighbour genes or to the maximal extension.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* use GO:BP ontology with 15169 gene sets (source: org.Mm.eg.db).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* check gene ID type in `gene_sets` and in `extended_tss`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* use whole genome as background.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* remove excluded regions from background.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* overlap `gr` to background regions (based on midpoint).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* in total 99 `gr`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* overlap extended TSS to background regions.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* check which genes are in the gene sets.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* only take gene sets with size &gt;= 5.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* in total 9329 gene sets.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* overlap `gr` to every extended TSS.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>* perform binomial test for each biological term.</code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="technical" class="level2">
-<h2 class="anchored" data-anchor-id="technical">Technical</h2>
-<p>Attendees should have a Wi-Fi enabled computer. An <strong>online R and RStudio environment</strong> will be provided. In order to access that environment your computer needs to be able to access http websites (not https). You can check this by browsing to <a href="http://www.httpforever.com">http://www.httpforever.com</a>. However, in case you wish to perform the practical exercises on your own computer, please take a moment to install the following before the course:</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="volcano-plot" class="level3">
+<h3 class="anchored" data-anchor-id="volcano-plot">Volcano plot</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotVolcano</span>(res)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="day3-1_enrichment_analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="regions-gene-assiciation-plot" class="level3">
+<h3 class="anchored" data-anchor-id="regions-gene-assiciation-plot">Regions-gene assiciation plot</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRegionGeneAssociations</span>(res)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="day3-1_enrichment_analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="there-is-a-shiny-application-to-explore-the-results" class="level3">
+<h3 class="anchored" data-anchor-id="there-is-a-shiny-application-to-explore-the-results">There is a <code>shiny</code> application to explore the results</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyReport</span>(res)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="simplyfied-representation-of-go-terms" class="level3">
+<h3 class="anchored" data-anchor-id="simplyfied-representation-of-go-terms">Simplyfied representation of GO terms</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tb <span class="ot">&lt;-</span> <span class="fu">getEnrichmentTable</span>(res)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sig_go_ids <span class="ot">&lt;-</span> tb<span class="sc">$</span>id[tb<span class="sc">$</span>p_adjust <span class="sc">&lt;</span> <span class="fl">0.05</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">&lt;-</span> <span class="fu">simplifyGO</span>(<span class="at">mat =</span> sig_go_ids)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>You haven't provided value for `ont`, guess it as `BP`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>relations: is_a, part_of, regulates, negatively_regulates, positively_regulates</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>IC_method: IC_annotation</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>term_sim_method: Sim_XGraSM_2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>IC_method: IC_annotation</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cluster 32 terms by 'binary_cut'... 4 clusters, used 0.08005095 secs.
+'magick' package is suggested to install to give better rasterization.
+
+Set `ht_opt$message = FALSE` to turn off this message.
+Perform keywords enrichment for 4 GO lists...</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="day3-1_enrichment_analysis_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarizeGO</span>(<span class="at">go_id =</span> sig_go_ids, <span class="sc">-</span><span class="fu">log10</span>(tb<span class="sc">$</span>p_adjust[tb<span class="sc">$</span>p_adjust <span class="sc">&lt;</span> <span class="fl">0.05</span>]), </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis_label =</span> <span class="st">"average -log10(p.adjust)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>You haven't provided value for `ont`, guess it as `BP`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>term_sim_method: Sim_XGraSM_2013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>IC_method: IC_annotation</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cluster 32 terms by 'binary_cut'... 4 clusters, used 0.05966401 secs.
+Perform keywords enrichment for 4 GO lists...</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="day3-1_enrichment_analysis_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="output" class="level3">
+<h3 class="anchored" data-anchor-id="output">Output</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><a href="https://cran.r-project.org/">R</a> version &gt; 4.2.</li>
-<li>Latest RStudio version, the <a href="https://rstudio.com/products/rstudio/download/">free version</a> is perfectly fine.</li>
-<li>The R packages necessary for the course. Find the <a href="https://rstudio.github.io/renv/"><code>renv</code></a> to install them <a href="https://github.com/sib-swiss/multiomics-biological-integration-training/blob/master/renv.lock">here</a>.</li>
+<li><p>The heatmap shows clear clustering of GO terms into two main clusters, indicating distinct functional groups.</p></li>
+<li><p>The GO terms on the right highlight biological processes relevant to neuronal and ion transport functions, such as transport, inorganic cation ion, exocytosis, synaptic, neurotransmitter, and behavior learning.</p></li>
+<li><p>The cluster with terms like cytosolic concentration, calcium ion suggests a calcium-related signaling or ion homeostasis process at play.</p></li>
+<li><p>The color gradient and similarity scores (up to ~0.6) indicate moderate similarity within clusters, which is reasonable for GO term groupings.</p></li>
 </ul>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>E11.5 to E15.5 is a key window in neural development involving neuronal differentiation, synapse formation, and active signaling.</p></li>
+<li><p>Active promoters linked to ion transport, synaptic transmission, calcium signaling are expected to be regulated during this developmental stage.</p></li>
+<li><p>The clustering separating signaling and transport-related terms from behavior and learning terms also aligns with early neural circuit formation and functional maturation.</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p><strong>Perform enrichment analysis of any other category.</strong></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

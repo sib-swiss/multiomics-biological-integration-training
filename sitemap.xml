@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/precourse_preparations.html</loc>
-    <lastmod>2026-02-09T11:29:40.796Z</lastmod>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/projects/project3.html</loc>
+    <lastmod>2026-02-13T11:52:56.000Z</lastmod>
   </url>
   <url>
-    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/day2/day2-4_enrichment_analysis.html</loc>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/projects/project1.html</loc>
+    <lastmod>2026-02-13T11:52:44.991Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/precourse_preparations.html</loc>
+    <lastmod>2026-02-13T11:44:56.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/day3/day3-1_enrichment_analysis.html</loc>
     <lastmod>2026-02-09T11:29:40.744Z</lastmod>
   </url>
   <url>
@@ -30,7 +38,7 @@
   </url>
   <url>
     <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/course_schedule.html</loc>
-    <lastmod>2026-02-09T11:29:40.742Z</lastmod>
+    <lastmod>2026-02-13T11:45:15.766Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/day1/day1-2_atac.html</loc>
@@ -38,7 +46,7 @@
   </url>
   <url>
     <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/day2/day2-1_overlap_matrix.html</loc>
-    <lastmod>2026-02-09T11:29:40.743Z</lastmod>
+    <lastmod>2026-02-13T12:07:32.793Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/day2/day2-3_multiomics.html</loc>
@@ -46,6 +54,14 @@
   </url>
   <url>
     <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/index.html</loc>
-    <lastmod>2026-02-09T11:29:40.749Z</lastmod>
+    <lastmod>2026-02-13T11:41:43.433Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/projects/introduction.html</loc>
+    <lastmod>2026-02-13T11:52:10.200Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/multiomics-biological-integration-training/projects/project2.html</loc>
+    <lastmod>2026-02-13T11:52:51.165Z</lastmod>
   </url>
 </urlset>
