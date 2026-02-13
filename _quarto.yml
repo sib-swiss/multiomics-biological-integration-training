@@ -30,7 +30,6 @@ website:
           - href: "day2/day2-1_overlap_matrix.qmd"
           - href: "day2/day2-2_atac_rna.qmd"
           - href: "day2/day2-3_multiomics.qmd"
-          - href: "day2/day2-4_enrichment_analysis.qmd"
       - text: "day 3"
         menu:
           - href: "day3/day3-1_enrichment_analysis.qmd"
