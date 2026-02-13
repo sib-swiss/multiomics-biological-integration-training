@@ -134,7 +134,7 @@ overlap <- metaGR(gr1 = overlap, gr2 = rd_h3k27ac, minOverlap = 10)
 overlap$name <- paste("peak", 1:length(overlap), sep = "_")
 names(overlap) <- overlap$name
 
-dir.create("output")
+dir.create("output", showWarnings = FALSE)
 saveRDS(object = overlap, file = "output/overlap_data.rds")
 ```
 
@@ -310,7 +310,7 @@ mat_h3k27me3 <- lapply(h3k27me3_bw, FUN = function(x) {
 saveRDS(mat_h3k27me3, file = "output/mat_h3k27me3.rds")
 ```
 
-### H27K4ac
+### H3K27ac
 ```{r}
 h3k27ac_files <- list.files("data", pattern = "H3K27ac", full.names = TRUE)
 names(h3k27ac_files) <- gsub(pattern = "\\.bw", replacement = "", x = basename(h3k27ac_files))

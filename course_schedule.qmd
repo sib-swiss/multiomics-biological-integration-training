@@ -31,7 +31,7 @@ title: "Course schedule"
 | LUNCH	| 12:00 PM	| 1:00 PM	|  |
 | Multi-omics data visualization	| 1:00 PM	| 3:00 PM	| [Lecture 6](assets/pdf/07_multiomics.pdf) | [Exercise 6](https://sib-swiss.github.io/multiomics-biological-integration-training/day2/day2-3_multiomics.html) |
 | BREAK	| 3:00 PM	|  3:30 PM	|  | |
-
+| Group project | 3:30 PM	| 5:00 PM	|  |  |
 ## Day 3
 
 | block   	| start    	| end      	| subject                             	| exercise                        	|
