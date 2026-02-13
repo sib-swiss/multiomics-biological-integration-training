@@ -1,0 +1,10 @@
+---
+title: "Project 3"
+execute:
+  eval: false
+project:
+  execute-dir: project
+format: html
+editor_options: 
+  chunk_output_type: console
+---

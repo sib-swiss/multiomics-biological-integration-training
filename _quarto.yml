@@ -7,7 +7,7 @@ project:
     - "!LICENSE.md"
 
 website:
-  title: "Biology-informed Multiomics Data Integration and Visualization"
+  title: "Biology-informed Integration and Visualization of Multiomics Data"
   favicon: assets/SIB_logo.svg
   search: true
   page-navigation: true
@@ -26,14 +26,23 @@ website:
           - href: "day1/day1-2_atac.qmd"
           - href: "day1/day1-3_chip_rna.qmd"
       - text: "day 2"
-        menu: 
+        menu:
           - href: "day2/day2-1_overlap_matrix.qmd"
           - href: "day2/day2-2_atac_rna.qmd"
           - href: "day2/day2-3_multiomics.qmd"
           - href: "day2/day2-4_enrichment_analysis.qmd"
+      - text: "day 3"
+        menu:
+          - href: "day3/day3-1_enrichment_analysis.qmd"
+      - text: "projects"
+        menu:
+          - href: "projects/introduction.qmd"
+          - href: "projects/project1.qmd"
+          - href: "projects/project2.qmd"
+          - href: "projects/project3.qmd"
     right:
       - icon: github
-        href: https://github.com/sib-swiss/biology-informed-multiomics-training
+        href: https://github.com/sib-swiss/multiomics-biological-integration-training
         aria-label: GitHub
   sidebar:
     logo: assets/SIB_LogoQ_GBv.svg
@@ -41,7 +50,7 @@ website:
 format:
   html:
     code-link: true
-    theme: 
+    theme:
       - default
       - custom.scss
     toc: true
@@ -53,6 +62,6 @@ format:
 
 
 execute:
-  freeze: auto 
+  freeze: auto
   cache: true
   tidy: true

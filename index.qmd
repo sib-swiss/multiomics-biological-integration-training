@@ -1,20 +1,18 @@
 ---
-title: "Biology-informed Multiomics Data Integration and Visualization"
+title: "Biology-informed Integration and Visualization of Multiomics Data"
 ---
 
 <figure>
     <img src="assets/images/course_logo.png" width="780"/>
 </figure>
 
-## Teachers
+## Teacher
 
 - Deepak Tanwar [ORCiD](https://orcid.org/0000-0001-8036-1989)
 
-## Authors
+## Author
 
 - Deepak Tanwar [ORCiD](https://orcid.org/0000-0001-8036-1989)
-- Geert van Geest [ORCiD](https://orcid.org/0000-0002-1561-078X)
-- Patricia Palagi [ORCiD](https://orcid.org/0000-0001-9062-6303)
 
 ## Helper
 
@@ -32,11 +30,11 @@ title: "Biology-informed Multiomics Data Integration and Visualization"
 
 At the end of the course, the participants are expected to:
 
-- Import and integrate pre-processed ATAC-seq, RNA-seq, ChIP-seq, and Bisulfite-seq data using `R` and Bioconductor packages.
-- Generate and interpret overlap matrices to identify regions of co-occurrence and regulation.
-- Perform functional analysis of the results.
-- Create informative and visually appealing plots to represent multi-omics data.
-
+- Explain the conceptual basis and necessary data structures for integrating ATAC-seq, RNA-seq, ChIP-seq, and bisulphite-seq.
+- Execute the full pipeline to import, normalize, and integrate pre-processed multiomics data using R and Bioconductor packages.
+- Differentiate and compare the results obtained from functional analysis methods to identify key regulated regions.
+- Design and generate advanced visualisations, for example enriched heatmaps, to effectively communicate the complex findings of multiomics data integration.
+- Lead the analysis and biological interpretation of a multiomics dataset, functioning as a culminating, challenging application of the entire workflow.
 
 ### Learning outcomes explained
 
