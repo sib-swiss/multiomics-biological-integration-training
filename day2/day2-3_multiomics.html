@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Exercise 6 – Biology-informed Integration and Visualization of Multiomics Data</title>
 <style>
 code{white-space: pre-wrap;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -76,8 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -103,21 +98,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-<!-- Cookie Consent & Matomo Tracking -->
-<script src="assets/cookie-consent.js"></script>
-<!-- End Matomo Code -->
-
-
+}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<!-- Cookie Consent & Matomo Tracking --><script src="assets/cookie-consent.js"></script><!-- End Matomo Code -->
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Biology-informed Integration and Visualization of Multiomics Data</span>
@@ -129,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -145,8 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 1</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-1">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-1">
+<li>
     <a class="dropdown-item" href="../day1/day1-1_dataset.html">
  <span class="dropdown-text">Exercise 1</span></a>
   </li>  
@@ -159,13 +146,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Exercise 3</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-2" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 2</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-2">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-2">
+<li>
     <a class="dropdown-item" href="../day2/day2-1_overlap_matrix.html">
  <span class="dropdown-text">Exercise 4</span></a>
   </li>  
@@ -178,24 +165,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Exercise 6</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-3" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 3</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">
+<li>
     <a class="dropdown-item" href="../day3/day3-1_enrichment_analysis.html">
  <span class="dropdown-text">Exercise 7</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">projects</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">
+<li>
     <a class="dropdown-item" href="../projects/introduction.html">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
@@ -212,22 +199,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Project 3</span></a>
   </li>  
     </ul>
-  </li>
+</li>
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sib-swiss/multiomics-biological-integration-training"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -235,42 +220,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#integrating-atac-and-rna-sequencing-data" id="toc-integrating-atac-and-rna-sequencing-data" class="nav-link active" data-scroll-target="#integrating-atac-and-rna-sequencing-data">Integrating ATAC and RNA sequencing data</a>
+<li>
+<a href="#integrating-atac-and-rna-sequencing-data" id="toc-integrating-atac-and-rna-sequencing-data" class="nav-link active" data-scroll-target="#integrating-atac-and-rna-sequencing-data">Integrating ATAC and RNA sequencing data</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries">Load Libraries</a></li>
   <li><a href="#load-required-objects-from-previous-exercises" id="toc-load-required-objects-from-previous-exercises" class="nav-link" data-scroll-target="#load-required-objects-from-previous-exercises">Load required objects from previous exercises</a></li>
-  <li><a href="#regulatory-regions" id="toc-regulatory-regions" class="nav-link" data-scroll-target="#regulatory-regions">Regulatory regions</a>
+  <li>
+<a href="#regulatory-regions" id="toc-regulatory-regions" class="nav-link" data-scroll-target="#regulatory-regions">Regulatory regions</a>
   <ul class="collapse">
-  <li><a href="#gained-enhancers-e15.5-e11.5" id="toc-gained-enhancers-e15.5-e11.5" class="nav-link" data-scroll-target="#gained-enhancers-e15.5-e11.5">Gained Enhancers (E15.5 &gt; E11.5)</a></li>
-  </ul></li>
+<li><a href="#gained-enhancers-e15.5-e11.5" id="toc-gained-enhancers-e15.5-e11.5" class="nav-link" data-scroll-target="#gained-enhancers-e15.5-e11.5">Gained Enhancers (E15.5 &gt; E11.5)</a></li>
+  </ul>
+</li>
   <li><a href="#lost-enhancers-e15.5-e11.5" id="toc-lost-enhancers-e15.5-e11.5" class="nav-link" data-scroll-target="#lost-enhancers-e15.5-e11.5">Lost Enhancers (E15.5 &lt; E11.5)</a></li>
   <li><a href="#activated-promoters-e15.5-e11.5" id="toc-activated-promoters-e15.5-e11.5" class="nav-link" data-scroll-target="#activated-promoters-e15.5-e11.5">Activated Promoters (E15.5 &gt; E11.5)</a></li>
   <li><a href="#repressed-promoters-e15.5-e11.5" id="toc-repressed-promoters-e15.5-e11.5" class="nav-link" data-scroll-target="#repressed-promoters-e15.5-e11.5">Repressed Promoters (E15.5 &lt; E11.5)</a></li>
   <li><a href="#save-the-file" id="toc-save-the-file" class="nav-link" data-scroll-target="#save-the-file">Save the file</a></li>
-  <li><a href="#enrichedheatmap-complexheatmap" id="toc-enrichedheatmap-complexheatmap" class="nav-link" data-scroll-target="#enrichedheatmap-complexheatmap"><code>EnrichedHeatmap</code> + <code>ComplexHeatmap</code></a>
+  <li>
+<a href="#enrichedheatmap-complexheatmap" id="toc-enrichedheatmap-complexheatmap" class="nav-link" data-scroll-target="#enrichedheatmap-complexheatmap"><code>EnrichedHeatmap</code> + <code>ComplexHeatmap</code></a>
   <ul class="collapse">
-  <li><a href="#our-function-from-previous-exercise" id="toc-our-function-from-previous-exercise" class="nav-link" data-scroll-target="#our-function-from-previous-exercise">Our function from previous exercise</a></li>
+<li><a href="#our-function-from-previous-exercise" id="toc-our-function-from-previous-exercise" class="nav-link" data-scroll-target="#our-function-from-previous-exercise">Our function from previous exercise</a></li>
   <li><a href="#atac" id="toc-atac" class="nav-link" data-scroll-target="#atac">ATAC</a></li>
   <li><a href="#h3k4me3" id="toc-h3k4me3" class="nav-link" data-scroll-target="#h3k4me3">H3K4me3</a></li>
   <li><a href="#h3k4me1" id="toc-h3k4me1" class="nav-link" data-scroll-target="#h3k4me1">H3K4me1</a></li>
@@ -280,18 +261,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#annotation" id="toc-annotation" class="nav-link" data-scroll-target="#annotation">Annotation</a></li>
   <li><a href="#rna" id="toc-rna" class="nav-link" data-scroll-target="#rna">RNA</a></li>
   <li><a href="#combine-plots" id="toc-combine-plots" class="nav-link" data-scroll-target="#combine-plots">Combine plots</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
   <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus">Bonus</a></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Exercise 6</h1>
 </div>
 
@@ -306,14 +285,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="integrating-atac-and-rna-sequencing-data" class="level1">
-<h1>Integrating ATAC and RNA sequencing data</h1>
+</header><section id="integrating-atac-and-rna-sequencing-data" class="level1"><h1>Integrating ATAC and RNA sequencing data</h1>
 <p><img src="../assets/images/multiomics.png" class="img-fluid"></p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>By the end of this exercise, you will be able to:</p>
 <ul>
 <li>Understand the biological significance of different assays such as ATAC-seq, ChIP-seq for histone marks, DNA methylation, and RNA-seq, and how they relate to gene regulation.</li>
@@ -322,15 +296,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Visualize complex multi-omics data by generating heatmaps with the EnrichedHeatmap and ComplexHeatmap R packages, highlighting changes across developmental stages.</li>
 <li>Interpret integrated heatmaps to explore relationships between chromatin state, DNA methylation, and transcriptional output.</li>
 <li>Use custom functions to automate visualization workflows, adapting color scales and annotations for effective data presentation.</li>
-</ul>
-</section>
-<section id="load-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
+</ul></section><section id="load-libraries" class="level2"><h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ComplexHeatmap)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EnrichedHeatmap)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(circlize)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SummarizedExperiment)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/ComplexHeatmap">ComplexHeatmap</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/EnrichedHeatmap">EnrichedHeatmap</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/circlize">circlize</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/SummarizedExperiment">SummarizedExperiment</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <table class="caption-top table">
 <colgroup>
@@ -338,13 +309,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 35%">
 <col style="width: 34%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th><strong>Assay</strong></th>
 <th><strong>What It Measures</strong></th>
 <th>**Biological Insight*</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><strong>ATAC-seq</strong></td>
@@ -382,239 +351,209 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Final <strong>transcriptional output</strong>; mRNA abundance.</td>
 </tr>
 </tbody>
-</table>
-</section>
-<section id="load-required-objects-from-previous-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="load-required-objects-from-previous-exercises">Load required objects from previous exercises</h2>
+</table></section><section id="load-required-objects-from-previous-exercises" class="level2"><h2 class="anchored" data-anchor-id="load-required-objects-from-previous-exercises">Load required objects from previous exercises</h2>
 <p>Here we load the <code>SummarizedExperiment</code> for the ChIP-seq data</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>atac <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/atac_se.rds"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>h3k4me3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/h3k4me3_se.rds"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>h3k4me1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/h3k4me1_se.rds"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>h3k27me3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/h3k27me3_se.rds"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>h3k27ac <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/h3k27ac_se.rds"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>rna <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/rna_se.rds"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(<span class="fu">colData</span>(rna)) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.tsv.gz"</span>, <span class="at">replacement =</span> <span class="st">""</span>, <span class="at">x =</span> <span class="fu">rownames</span>(<span class="fu">colData</span>(rna)))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>overlap <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/overlap_anno.rds"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>mat_ATAC <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_atac.rds"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>mat_RNA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_rna.rds"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>mat_H3K4me3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_h3k4me3.rds"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>mat_H3K4me1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_h3k4me1.rds"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>mat_H3K27me3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_h3k27me3.rds"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>mat_H3K27ac <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_h3k27ac.rds"</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>mat_BS <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/mat_bs.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/atac_se.rds"</span><span class="op">)</span></span>
+<span><span class="va">h3k4me3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/h3k4me3_se.rds"</span><span class="op">)</span></span>
+<span><span class="va">h3k4me1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/h3k4me1_se.rds"</span><span class="op">)</span></span>
+<span><span class="va">h3k27me3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/h3k27me3_se.rds"</span><span class="op">)</span></span>
+<span><span class="va">h3k27ac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/h3k27ac_se.rds"</span><span class="op">)</span></span>
+<span><span class="va">rna</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/rna_se.rds"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">rna</span><span class="op">)</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"\\.tsv.gz"</span>, replacement <span class="op">=</span> <span class="st">""</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">rna</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">overlap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/overlap_anno.rds"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mat_ATAC</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_atac.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_RNA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_rna.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_H3K4me3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_h3k4me3.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_H3K4me1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_h3k4me1.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_H3K27me3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_h3k27me3.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_H3K27ac</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_h3k27ac.rds"</span><span class="op">)</span></span>
+<span><span class="va">mat_BS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"output/mat_bs.rds"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="regulatory-regions" class="level2">
-<h2 class="anchored" data-anchor-id="regulatory-regions">Regulatory regions</h2>
+</section><section id="regulatory-regions" class="level2"><h2 class="anchored" data-anchor-id="regulatory-regions">Regulatory regions</h2>
 <p>We will sub-categorized the regions from the <code>Exercise 5</code> based on the above table.</p>
-<section id="gained-enhancers-e15.5-e11.5" class="level3">
-<h3 class="anchored" data-anchor-id="gained-enhancers-e15.5-e11.5">Gained Enhancers (E15.5 &gt; E11.5)</h3>
+<section id="gained-enhancers-e15.5-e11.5" class="level3"><h3 class="anchored" data-anchor-id="gained-enhancers-e15.5-e11.5">Gained Enhancers (E15.5 &gt; E11.5)</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>logFC_cols <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">"logFC"</span>, <span class="at">x =</span> <span class="fu">colnames</span>(<span class="fu">elementMetadata</span>(overlap)))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcols</span>(overlap)[, logFC_cols] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">mcols</span>(overlap)[, logFC_cols, <span class="at">drop =</span> <span class="cn">FALSE</span>], <span class="cf">function</span>(x) {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  x[<span class="fu">is.na</span>(x)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>gained_enhancers <span class="ot">&lt;-</span> overlap<span class="sc">$</span>ATAC_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K4me1_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K27ac_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.na</span>(overlap<span class="sc">$</span>H3K4me3_annotation) <span class="sc">&amp;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>ATAC_distanceToTSS <span class="sc">&gt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>RNA_logFC <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>overlap<span class="sc">$</span>ATAC_RNA[gained_enhancers] <span class="ot">&lt;-</span> <span class="st">"Gained Enhancers"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">logFC_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"logFC"</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="fu">elementMetadata</span><span class="op">(</span><span class="va">overlap</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">mcols</span><span class="op">(</span><span class="va">overlap</span><span class="op">)</span><span class="op">[</span>, <span class="va">logFC_cols</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu">mcols</span><span class="op">(</span><span class="va">overlap</span><span class="op">)</span><span class="op">[</span>, <span class="va">logFC_cols</span>, drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">]</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gained_enhancers</span> <span class="op">&lt;-</span> <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me1_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K27ac_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me3_annotation</span><span class="op">)</span> <span class="op">&amp;</span></span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_distanceToTSS</span> <span class="op">&gt;</span> <span class="fl">2500</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">RNA_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span></span>
+<span></span>
+<span><span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_RNA</span><span class="op">[</span><span class="va">gained_enhancers</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Gained Enhancers"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-</section>
-<section id="lost-enhancers-e15.5-e11.5" class="level2">
-<h2 class="anchored" data-anchor-id="lost-enhancers-e15.5-e11.5">Lost Enhancers (E15.5 &lt; E11.5)</h2>
+</section></section><section id="lost-enhancers-e15.5-e11.5" class="level2"><h2 class="anchored" data-anchor-id="lost-enhancers-e15.5-e11.5">Lost Enhancers (E15.5 &lt; E11.5)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lost_enhancers <span class="ot">&lt;-</span> overlap<span class="sc">$</span>ATAC_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K4me1_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K27ac_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.na</span>(overlap<span class="sc">$</span>H3K4me3_annotation) <span class="sc">&amp;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>ATAC_distanceToTSS <span class="sc">&gt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>RNA_logFC <span class="sc">&lt;</span> <span class="dv">0</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>overlap<span class="sc">$</span>ATAC_RNA[lost_enhancers] <span class="ot">&lt;-</span> <span class="st">"Lost Enhancers"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lost_enhancers</span> <span class="op">&lt;-</span> <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me1_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K27ac_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me3_annotation</span><span class="op">)</span> <span class="op">&amp;</span></span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_distanceToTSS</span> <span class="op">&gt;</span> <span class="fl">2500</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">RNA_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span></span>
+<span></span>
+<span><span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_RNA</span><span class="op">[</span><span class="va">lost_enhancers</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Lost Enhancers"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="activated-promoters-e15.5-e11.5" class="level2">
-<h2 class="anchored" data-anchor-id="activated-promoters-e15.5-e11.5">Activated Promoters (E15.5 &gt; E11.5)</h2>
+</section><section id="activated-promoters-e15.5-e11.5" class="level2"><h2 class="anchored" data-anchor-id="activated-promoters-e15.5-e11.5">Activated Promoters (E15.5 &gt; E11.5)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>active_promoters <span class="ot">&lt;-</span> overlap<span class="sc">$</span>ATAC_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K4me3_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K27ac_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>ATAC_distanceToTSS <span class="sc">&lt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>RNA_logFC <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>overlap<span class="sc">$</span>ATAC_RNA[active_promoters] <span class="ot">&lt;-</span> <span class="st">"Active Promoters"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">active_promoters</span> <span class="op">&lt;-</span> <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me3_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K27ac_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_distanceToTSS</span> <span class="op">&lt;</span> <span class="fl">2500</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">RNA_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span></span>
+<span></span>
+<span><span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_RNA</span><span class="op">[</span><span class="va">active_promoters</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Active Promoters"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="repressed-promoters-e15.5-e11.5" class="level2">
-<h2 class="anchored" data-anchor-id="repressed-promoters-e15.5-e11.5">Repressed Promoters (E15.5 &lt; E11.5)</h2>
+</section><section id="repressed-promoters-e15.5-e11.5" class="level2"><h2 class="anchored" data-anchor-id="repressed-promoters-e15.5-e11.5">Repressed Promoters (E15.5 &lt; E11.5)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>repressed_promoters <span class="ot">&lt;-</span> overlap<span class="sc">$</span>ATAC_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K4me3_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K27ac_logFC <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>H3K27me3_logFC <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>ATAC_distanceToTSS <span class="sc">&lt;</span> <span class="dv">2500</span> <span class="sc">&amp;</span> </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  overlap<span class="sc">$</span>RNA_logFC <span class="sc">&lt;</span> <span class="dv">0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>overlap<span class="sc">$</span>ATAC_RNA[repressed_promoters] <span class="ot">&lt;-</span> <span class="st">"Repressed Promoters"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repressed_promoters</span> <span class="op">&lt;-</span> <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K4me3_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K27ac_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">H3K27me3_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_distanceToTSS</span> <span class="op">&lt;</span> <span class="fl">2500</span> <span class="op">&amp;</span> </span>
+<span>  <span class="va">overlap</span><span class="op">$</span><span class="va">RNA_logFC</span> <span class="op">&lt;</span> <span class="fl">0</span></span>
+<span></span>
+<span><span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_RNA</span><span class="op">[</span><span class="va">repressed_promoters</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"Repressed Promoters"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="save-the-file" class="level2">
-<h2 class="anchored" data-anchor-id="save-the-file">Save the file</h2>
+</section><section id="save-the-file" class="level2"><h2 class="anchored" data-anchor-id="save-the-file">Save the file</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(<span class="at">object =</span> overlap, <span class="at">file =</span> <span class="st">"output/overlap_anno2.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">overlap</span>, file <span class="op">=</span> <span class="st">"output/overlap_anno2.rds"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="enrichedheatmap-complexheatmap" class="level2">
-<h2 class="anchored" data-anchor-id="enrichedheatmap-complexheatmap"><code>EnrichedHeatmap</code> + <code>ComplexHeatmap</code></h2>
-<section id="our-function-from-previous-exercise" class="level3">
-<h3 class="anchored" data-anchor-id="our-function-from-previous-exercise">Our function from previous exercise</h3>
+</section><section id="enrichedheatmap-complexheatmap" class="level2"><h2 class="anchored" data-anchor-id="enrichedheatmap-complexheatmap">
+<code>EnrichedHeatmap</code> + <code>ComplexHeatmap</code>
+</h2>
+<section id="our-function-from-previous-exercise" class="level3"><h3 class="anchored" data-anchor-id="our-function-from-previous-exercise">Our function from previous exercise</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>make_EH <span class="ot">&lt;-</span> <span class="cf">function</span>(norm_mat, <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"red"</span>), <span class="at">split_rows =</span> <span class="cn">NULL</span>, hm_name, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>){</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(heatmap_cols) <span class="sc">==</span> <span class="dv">2</span>){</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    col_fun <span class="ot">&lt;-</span> <span class="fu">colorRamp2</span>(<span class="fu">quantile</span>(norm_mat, <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.99</span>), <span class="at">na.rm =</span> T), heatmap_cols)   </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(<span class="fu">length</span>(heatmap_cols) <span class="sc">==</span> <span class="dv">3</span>){</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  col_fun <span class="ot">&lt;-</span> <span class="fu">colorRamp2</span>(<span class="fu">quantile</span>(mat_BS<span class="sc">$</span>WGBS_11half, <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="fl">0.99</span>), <span class="at">na.rm =</span> T), heatmap_cols)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span>{</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Please update function!"</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  vmin <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">quantile</span>(norm_mat, <span class="fu">c</span>(<span class="fl">0.01</span>), <span class="at">na.rm =</span> T))</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  vmax <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">quantile</span>(norm_mat, <span class="fu">c</span>(<span class="fl">0.99</span>), <span class="at">na.rm =</span> T))</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  vmid <span class="ot">&lt;-</span> (vmin <span class="sc">+</span> vmax) <span class="sc">/</span> <span class="dv">2</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  legend_ticks <span class="ot">&lt;-</span> <span class="fu">c</span>(vmin, vmid, vmax)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">EnrichedHeatmap</span>(</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">mat =</span> norm_mat,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> hm_name,</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">row_split =</span> split_rows,</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> col_fun,</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"cm"</span>),</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"cm"</span>),</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_title =</span> hm_name,</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">column_title_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">8</span>, <span class="at">fill =</span> col_fill),</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis_name =</span> <span class="fu">c</span>(<span class="st">"-1kb"</span>, <span class="st">"mid"</span>, <span class="st">"1kb"</span>),</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">heatmap_legend_param =</span> <span class="fu">list</span>(</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">at =</span> legend_ticks,</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend_height =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"cm"</span>),</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend_width =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">round</span>(legend_ticks, <span class="at">digits =</span> <span class="dv">1</span>),</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">8</span>),</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">7</span>)</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">top_annotation =</span> <span class="fu">HeatmapAnnotation</span>(</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">lines =</span> <span class="fu">anno_enriched</span>(</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">height =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"cm"</span>),</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis_param =</span> <span class="fu">list</span>(</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">side =</span> <span class="st">"right"</span>,</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">facing =</span> <span class="st">"inside"</span>,</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">gp =</span> <span class="fu">gpar</span>(</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">fontsize =</span> <span class="dv">7</span>,</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">lwd =</span> <span class="fl">0.4</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">make_EH</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">norm_mat</span>, <span class="va">heatmap_cols</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span>, <span class="va">split_rows</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">hm_name</span>, <span class="va">col_fill</span> <span class="op">=</span> <span class="st">"#ffcccc"</span><span class="op">)</span><span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">heatmap_cols</span><span class="op">)</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">col_fun</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/circlize/man/colorRamp2.html">colorRamp2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">norm_mat</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.99</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>, <span class="va">heatmap_cols</span><span class="op">)</span>   </span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">heatmap_cols</span><span class="op">)</span> <span class="op">==</span> <span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">col_fun</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/circlize/man/colorRamp2.html">colorRamp2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mat_BS</span><span class="op">$</span><span class="va">WGBS_11half</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.5</span>, <span class="fl">0.99</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span>, <span class="va">heatmap_cols</span><span class="op">)</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/message.html">message</a></span><span class="op">(</span><span class="st">"Please update function!"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="va">vmin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">norm_mat</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">vmax</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">norm_mat</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.99</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="va">vmid</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">vmin</span> <span class="op">+</span> <span class="va">vmax</span><span class="op">)</span> <span class="op">/</span> <span class="fl">2</span></span>
+<span>  <span class="va">legend_ticks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">vmin</span>, <span class="va">vmid</span>, <span class="va">vmax</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span></span>
+<span>  mat <span class="op">=</span> <span class="va">norm_mat</span>,</span>
+<span>  name <span class="op">=</span> <span class="va">hm_name</span>,</span>
+<span>  row_split <span class="op">=</span> <span class="va">split_rows</span>,</span>
+<span>  col <span class="op">=</span> <span class="va">col_fun</span>,</span>
+<span>  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>  height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">8</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>  column_title <span class="op">=</span> <span class="va">hm_name</span>,</span>
+<span>  column_title_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span>, fill <span class="op">=</span> <span class="va">col_fill</span><span class="op">)</span>,</span>
+<span>  axis_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"-1kb"</span>, <span class="st">"mid"</span>, <span class="st">"1kb"</span><span class="op">)</span>,</span>
+<span>  heatmap_legend_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    at <span class="op">=</span> <span class="va">legend_ticks</span>,</span>
+<span>    legend_height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>    legend_width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>    labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">legend_ticks</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
+<span>    title_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,</span>
+<span>    labels_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  top_annotation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/HeatmapAnnotation.html">HeatmapAnnotation</a></span><span class="op">(</span></span>
+<span>    lines <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/anno_enriched.html">anno_enriched</a></span><span class="op">(</span></span>
+<span>      height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">1</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>      axis_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>        side <span class="op">=</span> <span class="st">"right"</span>,</span>
+<span>        facing <span class="op">=</span> <span class="st">"inside"</span>,</span>
+<span>        gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span></span>
+<span>          fontsize <span class="op">=</span> <span class="fl">7</span>,</span>
+<span>          lwd <span class="op">=</span> <span class="fl">0.4</span></span>
+<span>        <span class="op">)</span></span>
+<span>      <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="atac" class="level3">
-<h3 class="anchored" data-anchor-id="atac">ATAC</h3>
+</section><section id="atac" class="level3"><h3 class="anchored" data-anchor-id="atac">ATAC</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>atac_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_ATAC<span class="sc">$</span>ATAC_11half, <span class="at">hm_name =</span> <span class="st">"AS-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>atac_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_ATAC<span class="sc">$</span>ATAC_15half, <span class="at">hm_name =</span> <span class="st">"AS-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_ATAC</span><span class="op">$</span><span class="va">ATAC_11half</span>, hm_name <span class="op">=</span> <span class="st">"AS-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span><span class="op">)</span></span>
+<span><span class="va">atac_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_ATAC</span><span class="op">$</span><span class="va">ATAC_15half</span>, hm_name <span class="op">=</span> <span class="st">"AS-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="h3k4me3" class="level3">
-<h3 class="anchored" data-anchor-id="h3k4me3">H3K4me3</h3>
+</section><section id="h3k4me3" class="level3"><h3 class="anchored" data-anchor-id="h3k4me3">H3K4me3</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>h3k4me3_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K4me3<span class="sc">$</span>H3K4me3_11half, <span class="at">hm_name =</span> <span class="st">"K4me3-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"darkgreen"</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>h3k4me3_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K4me3<span class="sc">$</span>H3K4me3_15half, <span class="at">hm_name =</span> <span class="st">"K4me3-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"darkgreen"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">h3k4me3_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K4me3</span><span class="op">$</span><span class="va">H3K4me3_11half</span>, hm_name <span class="op">=</span> <span class="st">"K4me3-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"darkgreen"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">h3k4me3_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K4me3</span><span class="op">$</span><span class="va">H3K4me3_15half</span>, hm_name <span class="op">=</span> <span class="st">"K4me3-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"darkgreen"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="h3k4me1" class="level3">
-<h3 class="anchored" data-anchor-id="h3k4me1">H3K4me1</h3>
+</section><section id="h3k4me1" class="level3"><h3 class="anchored" data-anchor-id="h3k4me1">H3K4me1</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>h3k4me1_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K4me1<span class="sc">$</span>H3K4me1_11half, <span class="at">hm_name =</span> <span class="st">"K4me1-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"blue"</span>))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>h3k4me1_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K4me1<span class="sc">$</span>H3K4me1_15half, <span class="at">hm_name =</span> <span class="st">"K4me1-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"blue"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">h3k4me1_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K4me1</span><span class="op">$</span><span class="va">H3K4me1_11half</span>, hm_name <span class="op">=</span> <span class="st">"K4me1-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">h3k4me1_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K4me1</span><span class="op">$</span><span class="va">H3K4me1_15half</span>, hm_name <span class="op">=</span> <span class="st">"K4me1-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="h3k27me3" class="level3">
-<h3 class="anchored" data-anchor-id="h3k27me3">H3K27me3</h3>
+</section><section id="h3k27me3" class="level3"><h3 class="anchored" data-anchor-id="h3k27me3">H3K27me3</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>h3k27me3_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K27me3<span class="sc">$</span>H3K27me3_11half, <span class="at">hm_name =</span> <span class="st">"K27me3-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"purple"</span>))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>h3k27me3_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K27me3<span class="sc">$</span>H3K27me3_15half, <span class="at">hm_name =</span> <span class="st">"K27me3-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"purple"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">h3k27me3_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K27me3</span><span class="op">$</span><span class="va">H3K27me3_11half</span>, hm_name <span class="op">=</span> <span class="st">"K27me3-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span>,</span>
+<span>                        heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"purple"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">h3k27me3_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K27me3</span><span class="op">$</span><span class="va">H3K27me3_15half</span>, hm_name <span class="op">=</span> <span class="st">"K27me3-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span>,</span>
+<span>                        heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"purple"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="h3k27ac" class="level3">
-<h3 class="anchored" data-anchor-id="h3k27ac">H3K27ac</h3>
+</section><section id="h3k27ac" class="level3"><h3 class="anchored" data-anchor-id="h3k27ac">H3K27ac</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>h3k27ac_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K27ac<span class="sc">$</span>H3K27ac_11half, <span class="at">hm_name =</span> <span class="st">"K27ac-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"brown"</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>h3k27ac_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_H3K27ac<span class="sc">$</span>H3K27ac_15half, <span class="at">hm_name =</span> <span class="st">"K27ac-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"white"</span>, <span class="st">"brown"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">h3k27ac_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K27ac</span><span class="op">$</span><span class="va">H3K27ac_11half</span>, hm_name <span class="op">=</span> <span class="st">"K27ac-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"brown"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">h3k27ac_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_H3K27ac</span><span class="op">$</span><span class="va">H3K27ac_15half</span>, hm_name <span class="op">=</span> <span class="st">"K27ac-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span>,</span>
+<span>                       heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"brown"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="methylation" class="level3">
-<h3 class="anchored" data-anchor-id="methylation">Methylation</h3>
+</section><section id="methylation" class="level3"><h3 class="anchored" data-anchor-id="methylation">Methylation</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>meth_11h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_BS<span class="sc">$</span>WGBS_11half, <span class="at">hm_name =</span> <span class="st">"BS-E11.5"</span>, <span class="at">col_fill =</span> <span class="st">"#ffcccc"</span>,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>meth_15h <span class="ot">&lt;-</span> <span class="fu">make_EH</span>(<span class="at">norm_mat =</span> mat_BS<span class="sc">$</span>WGBS_15half, <span class="at">hm_name =</span> <span class="st">"BS-E15.5"</span>, <span class="at">col_fill =</span> <span class="st">"#e6fff2"</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">heatmap_cols =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">meth_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_BS</span><span class="op">$</span><span class="va">WGBS_11half</span>, hm_name <span class="op">=</span> <span class="st">"BS-E11.5"</span>, col_fill <span class="op">=</span> <span class="st">"#ffcccc"</span>,</span>
+<span>                    heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">meth_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_BS</span><span class="op">$</span><span class="va">WGBS_15half</span>, hm_name <span class="op">=</span> <span class="st">"BS-E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span>,</span>
+<span>                    heatmap_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"white"</span>, <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="annotation" class="level3">
-<h3 class="anchored" data-anchor-id="annotation">Annotation</h3>
+</section><section id="annotation" class="level3"><h3 class="anchored" data-anchor-id="annotation">Annotation</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>split_anno <span class="ot">&lt;-</span> overlap<span class="sc">$</span>ATAC_RNA</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(split_anno) <span class="ot">&lt;-</span> <span class="fu">names</span>(overlap)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(split_anno)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno</span> <span class="op">&lt;-</span> <span class="va">overlap</span><span class="op">$</span><span class="va">ATAC_RNA</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">overlap</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Active Promoters"    "Inc. Acc."           "Dec. Acc."          
  [4] "Incongruent"         "Silent"              "Active"             
  [7] "Repressed"           "Gained Enhancers"    "Lost Enhancers"     
 [10] "Repressed Promoters"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>split_anno <span class="ot">&lt;-</span> <span class="fu">factor</span>(split_anno, <span class="at">levels =</span> <span class="fu">unique</span>(split_anno)[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>)])</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>cols_an <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(split_anno)), <span class="at">name =</span> <span class="st">"Paired"</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>row_order_eh <span class="ot">&lt;-</span> <span class="fu">row_order</span>(atac_11h)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">split_anno</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">10</span>,<span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Paired"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">row_order_eh</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/row_order-dispatch.html">row_order</a></span><span class="op">(</span><span class="va">atac_11h</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The heatmap has not been initialized. You might have different results
 if you repeatedly execute this function, e.g. when row_km/column_km was
 set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>anno_hm <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mat =</span> split_anno,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> cols_an, </span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="st">"Annotation"</span>,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_row_names =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_column_names =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>),</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">unit</span>(<span class="dv">8</span>, <span class="st">"cm"</span>),</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">row_order =</span> row_order_eh,</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">row_title_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">0</span>)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">anno_hm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span></span>
+<span>  mat <span class="op">=</span> <span class="va">split_anno</span>,</span>
+<span>  col <span class="op">=</span> <span class="va">cols_an</span>, </span>
+<span>  name <span class="op">=</span> <span class="st">"Annotation"</span>,</span>
+<span>  show_row_names <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>  show_column_names <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>  width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"mm"</span><span class="op">)</span>,</span>
+<span>  height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">8</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>  row_order <span class="op">=</span> <span class="va">row_order_eh</span>,</span>
+<span>  row_title_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>There are 10 unique colors in the vector `col` and 10 unique values in
 `matrix`. `Heatmap()` will treat it as an exact discrete one-to-one
@@ -622,77 +561,73 @@ mapping. If this is not what you want, slightly change the number of
 colors, e.g. by adding one more color or removing a color.</code></pre>
 </div>
 </div>
-</section>
-<section id="rna" class="level3">
-<h3 class="anchored" data-anchor-id="rna">RNA</h3>
+</section><section id="rna" class="level3"><h3 class="anchored" data-anchor-id="rna">RNA</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>rna_hm <span class="ot">&lt;-</span> <span class="fu">Heatmap</span>(<span class="at">matrix =</span> mat_RNA, </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="st">"RNA"</span>, </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">cluster_columns =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">na_col =</span> <span class="st">"grey"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">row_order =</span> row_order_eh,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_row_names =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_column_names =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">row_title_rot =</span> <span class="dv">0</span>,</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">top_annotation =</span> <span class="fu">HeatmapAnnotation</span>(</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">df =</span> <span class="fu">colData</span>(rna)[,<span class="dv">2</span>,<span class="at">drop =</span> <span class="cn">FALSE</span>], </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">annotation_name_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">0</span>)</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        ),</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"cm"</span>),</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">height =</span> <span class="fu">unit</span>(<span class="dv">18</span>, <span class="st">"cm"</span>),</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">heatmap_legend_param =</span> <span class="fu">list</span>(</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend_height =</span> <span class="fu">unit</span>(<span class="fl">0.5</span>, <span class="st">"cm"</span>),</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend_width =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>),</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">at =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">10</span>), </span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"RNA"</span>,</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">title_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">8</span>),</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">7</span>)</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">rna_hm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span>matrix <span class="op">=</span> <span class="va">mat_RNA</span>, </span>
+<span>        name <span class="op">=</span> <span class="st">"RNA"</span>, </span>
+<span>        cluster_columns <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>        cluster_rows <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>        na_col <span class="op">=</span> <span class="st">"grey"</span>,</span>
+<span>        row_order <span class="op">=</span> <span class="va">row_order_eh</span>,</span>
+<span>        show_row_names <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>        show_column_names <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>        row_title_rot <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>        top_annotation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/HeatmapAnnotation.html">HeatmapAnnotation</a></span><span class="op">(</span></span>
+<span>          df <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html">colData</a></span><span class="op">(</span><span class="va">rna</span><span class="op">)</span><span class="op">[</span>,<span class="fl">2</span>,drop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">]</span>, </span>
+<span>          annotation_name_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span>        <span class="op">)</span>,</span>
+<span>        width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>        height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">18</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>        heatmap_legend_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>          legend_height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>          legend_width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">0.1</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
+<span>          at <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>,<span class="fl">0</span>,<span class="fl">10</span><span class="op">)</span>, </span>
+<span>          title <span class="op">=</span> <span class="st">"RNA"</span>,</span>
+<span>          title_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,</span>
+<span>          labels_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span>
+<span>        <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="combine-plots" class="level3">
-<h3 class="anchored" data-anchor-id="combine-plots">Combine plots</h3>
+</section><section id="combine-plots" class="level3"><h3 class="anchored" data-anchor-id="combine-plots">Combine plots</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>TITLE_PADDING <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"mm"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>legend_gap <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="dv">3</span>, <span class="st">"mm"</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>legend_grid_height <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>legend_grid_width <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="dv">2</span>, <span class="st">"mm"</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>HEATMAP_LEGEND_PADDING <span class="ot">&lt;-</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"mm"</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>ht_opt<span class="sc">$</span>heatmap_border <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  anno_hm <span class="sc">+</span> </span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    atac_11h <span class="sc">+</span> atac_15h <span class="sc">+</span> </span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    h3k4me3_11h <span class="sc">+</span> h3k4me3_15h <span class="sc">+</span> </span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    h3k4me1_11h <span class="sc">+</span> h3k4me1_15h <span class="sc">+</span> </span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    h3k27me3_11h <span class="sc">+</span> h3k27me3_15h <span class="sc">+</span> </span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    h3k27ac_11h <span class="sc">+</span> h3k27ac_15h <span class="sc">+</span> </span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    rna_hm <span class="sc">+</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    meth_11h <span class="sc">+</span> meth_15h, </span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">split =</span> split_anno, </span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">merge_legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ht_opt</span><span class="op">$</span><span class="va">TITLE_PADDING</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">1</span>, <span class="st">"mm"</span><span class="op">)</span></span>
+<span><span class="va">ht_opt</span><span class="op">$</span><span class="va">legend_gap</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">3</span>, <span class="st">"mm"</span><span class="op">)</span></span>
+<span><span class="va">ht_opt</span><span class="op">$</span><span class="va">legend_grid_height</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"mm"</span><span class="op">)</span></span>
+<span><span class="va">ht_opt</span><span class="op">$</span><span class="va">legend_grid_width</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">2</span>, <span class="st">"mm"</span><span class="op">)</span></span>
+<span><span class="va">ht_opt</span><span class="op">$</span><span class="va">HEATMAP_LEGEND_PADDING</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">1</span>, <span class="st">"mm"</span><span class="op">)</span></span>
+<span><span class="va">ht_opt</span><span class="op">$</span><span class="va">heatmap_border</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span></span>
+<span>  <span class="va">anno_hm</span> <span class="op">+</span> </span>
+<span>    <span class="va">atac_11h</span> <span class="op">+</span> <span class="va">atac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me3_11h</span> <span class="op">+</span> <span class="va">h3k4me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me1_11h</span> <span class="op">+</span> <span class="va">h3k4me1_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27me3_11h</span> <span class="op">+</span> <span class="va">h3k27me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27ac_11h</span> <span class="op">+</span> <span class="va">h3k27ac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">rna_hm</span> <span class="op">+</span></span>
+<span>    <span class="va">meth_11h</span> <span class="op">+</span> <span class="va">meth_15h</span>, </span>
+<span>  split <span class="op">=</span> <span class="va">split_anno</span>, </span>
+<span>  merge_legend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  heatmap_legend_side <span class="op">=</span> <span class="st">"bottom"</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="st">"output/final_heatmap.pdf"</span>, <span class="at">width =</span> <span class="dv">22</span>, <span class="at">height =</span> <span class="dv">17</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.newpage</span>()</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pushViewport</span>(<span class="fu">viewport</span>(<span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">lwd =</span> <span class="fl">0.5</span>)))</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  anno_hm <span class="sc">+</span> </span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    atac_11h <span class="sc">+</span> atac_15h <span class="sc">+</span> </span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    h3k4me3_11h <span class="sc">+</span> h3k4me3_15h <span class="sc">+</span> </span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    h3k4me1_11h <span class="sc">+</span> h3k4me1_15h <span class="sc">+</span> </span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    h3k27me3_11h <span class="sc">+</span> h3k27me3_15h <span class="sc">+</span> </span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    h3k27ac_11h <span class="sc">+</span> h3k27ac_15h <span class="sc">+</span> </span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    rna_hm <span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    meth_11h <span class="sc">+</span> meth_15h, </span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">split =</span> split_anno, </span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">merge_legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/pdf.html">pdf</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"output/final_heatmap.pdf"</span>, width <span class="op">=</span> <span class="fl">22</span>, height <span class="op">=</span> <span class="fl">17</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grid/grid.newpage.html">grid.newpage</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grid/viewports.html">pushViewport</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grid/viewport.html">viewport</a></span><span class="op">(</span>gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span></span>
+<span>  <span class="va">anno_hm</span> <span class="op">+</span> </span>
+<span>    <span class="va">atac_11h</span> <span class="op">+</span> <span class="va">atac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me3_11h</span> <span class="op">+</span> <span class="va">h3k4me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me1_11h</span> <span class="op">+</span> <span class="va">h3k4me1_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27me3_11h</span> <span class="op">+</span> <span class="va">h3k27me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27ac_11h</span> <span class="op">+</span> <span class="va">h3k27ac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">rna_hm</span> <span class="op">+</span></span>
+<span>    <span class="va">meth_11h</span> <span class="op">+</span> <span class="va">meth_15h</span>, </span>
+<span>  split <span class="op">=</span> <span class="va">split_anno</span>, </span>
+<span>  merge_legend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  heatmap_legend_side <span class="op">=</span> <span class="st">"bottom"</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: `legend_height` you specified is too small, use the default minimal
 height.
@@ -773,29 +708,29 @@ height.
 Warning: `legend_height` you specified is too small, use the default minimal
 height.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">popViewport</span>()</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grid/viewports.html">popViewport</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>quartz_off_screen 
                 2 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">filename =</span> <span class="st">"output/final_heatmap.png"</span>, <span class="at">width =</span> <span class="dv">27</span>, <span class="at">height =</span> <span class="dv">22</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">res =</span> <span class="dv">330</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.newpage</span>()</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pushViewport</span>(<span class="fu">viewport</span>(<span class="at">gp =</span> <span class="fu">gpar</span>(<span class="at">lwd =</span> <span class="fl">0.5</span>)))</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  anno_hm <span class="sc">+</span> </span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    atac_11h <span class="sc">+</span> atac_15h <span class="sc">+</span> </span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    h3k4me3_11h <span class="sc">+</span> h3k4me3_15h <span class="sc">+</span> </span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    h3k4me1_11h <span class="sc">+</span> h3k4me1_15h <span class="sc">+</span> </span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    h3k27me3_11h <span class="sc">+</span> h3k27me3_15h <span class="sc">+</span> </span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    h3k27ac_11h <span class="sc">+</span> h3k27ac_15h <span class="sc">+</span> </span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    rna_hm <span class="sc">+</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    meth_11h <span class="sc">+</span> meth_15h, </span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">split =</span> split_anno, </span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">merge_legend =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/png.html">png</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"output/final_heatmap.png"</span>, width <span class="op">=</span> <span class="fl">27</span>, height <span class="op">=</span> <span class="fl">22</span>, units <span class="op">=</span> <span class="st">"in"</span>, res <span class="op">=</span> <span class="fl">330</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grid/grid.newpage.html">grid.newpage</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grid/viewports.html">pushViewport</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grid/viewport.html">viewport</a></span><span class="op">(</span>gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span></span>
+<span>  <span class="va">anno_hm</span> <span class="op">+</span> </span>
+<span>    <span class="va">atac_11h</span> <span class="op">+</span> <span class="va">atac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me3_11h</span> <span class="op">+</span> <span class="va">h3k4me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k4me1_11h</span> <span class="op">+</span> <span class="va">h3k4me1_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27me3_11h</span> <span class="op">+</span> <span class="va">h3k27me3_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">h3k27ac_11h</span> <span class="op">+</span> <span class="va">h3k27ac_15h</span> <span class="op">+</span> </span>
+<span>    <span class="va">rna_hm</span> <span class="op">+</span></span>
+<span>    <span class="va">meth_11h</span> <span class="op">+</span> <span class="va">meth_15h</span>, </span>
+<span>  split <span class="op">=</span> <span class="va">split_anno</span>, </span>
+<span>  merge_legend <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  heatmap_legend_side <span class="op">=</span> <span class="st">"bottom"</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: `legend_height` you specified is too small, use the default minimal
 height.
@@ -876,18 +811,15 @@ height.
 Warning: `legend_height` you specified is too small, use the default minimal
 height.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">popViewport</span>()</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grid/viewports.html">popViewport</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>quartz_off_screen 
                 2 </code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="question" class="level2">
-<h2 class="anchored" data-anchor-id="question">Question</h2>
+</section></section><section id="question" class="level2"><h2 class="anchored" data-anchor-id="question">Question</h2>
 <p><strong>Look at the plot carefully and try to understand patterns. Can you confirm from the plot that the plot is correct for the <code>Active Promoters</code>?</strong></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -902,9 +834,7 @@ Important
 <p>You can make all possible categories from this <code>overlapMatrix</code>. Feel free to make more categories.</p>
 </div>
 </div>
-</section>
-<section id="bonus" class="level2">
-<h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
+</section><section id="bonus" class="level2"><h2 class="anchored" data-anchor-id="bonus">Bonus</h2>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -920,11 +850,7 @@ Important
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -1325,7 +1251,6 @@ Important
   });
   </script>
 </div> <!-- /content -->
-
 
 
 
