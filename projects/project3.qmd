@@ -13,7 +13,7 @@ editor_options:
 
 In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.
 
-### Forebrain
+### Hindbrain
 
 #### Major TFs and genes at E11.5–E15.5
 

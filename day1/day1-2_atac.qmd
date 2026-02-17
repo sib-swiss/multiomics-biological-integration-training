@@ -30,6 +30,7 @@ library(gUtils)
 library(rtracklayer)
 library(circlize)
 library(GenomicRanges)
+library(ggplot2)
 ```
 
 
@@ -48,6 +49,39 @@ rowRanges(atac)
 rd_atac <- rowRanges(atac)
 rd_atac <- rd_atac[abs(rd_atac$logFC) >= 0.5 & rd_atac$qvalue <= 0.1]
 colnames(elementMetadata(rd_atac)) <- paste("ATAC", colnames(elementMetadata(rd_atac)), sep = "_")
+```
+
+
+## Volcanoplot to observe differentially accessible peaks
+```{r}
+df <- data.frame(rd_atac)
+head(df)
+
+rownames(df) <- paste("region", 1:nrow(df), sep = "_")
+head(df)
+
+# Define thresholds
+fc_cutoff <- 0.5
+q_cutoff <- 0.1
+
+# Count significant peaks
+up_sig <- sum(df$ATAC_logFC > fc_cutoff & df$ATAC_qvalue < q_cutoff, na.rm = TRUE)
+down_sig <- sum(df$ATAC_logFC < -fc_cutoff & df$ATAC_qvalue < q_cutoff, na.rm = TRUE)
+
+ggplot(df, aes(x = ATAC_logFC, y = -log10(ATAC_qvalue))) +
+  geom_point(aes(color = ATAC_logFC > 0)) +
+  scale_color_manual(values = c("TRUE" = "red", "FALSE" = "blue")) +
+  theme_bw() +
+  xlab("Log2 Fold Change") +
+  ylab("-Log10 Q-value") +
+  ggtitle("Volcano Plot of Differentially Accessible Peaks") +
+  geom_vline(xintercept = c(-fc_cutoff, fc_cutoff), linetype = "dashed", color = "red") +
+  geom_hline(yintercept = -log10(q_cutoff), linetype = "dashed", color = "blue") +
+  annotate("text", x = 2, y = max(-log10(df$ATAC_qvalue), na.rm=TRUE),
+           label = paste0("Up: ", up_sig), color = "red", hjust = 1) +
+  annotate("text", x = -2, y = max(-log10(df$ATAC_qvalue), na.rm=TRUE),
+           label = paste0("Down: ", down_sig), color = "blue", hjust = 0) +
+  theme(legend.position = "none")
 ```
 
 
