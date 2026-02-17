@@ -25,3 +25,6 @@ de_genes_FindAllMarkers.csv
 *.html
 data/
 **/*.quarto_ipynb
+projects/project1/
+projects/project2/
+projects/project3/
