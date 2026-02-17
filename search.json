@@ -1,5 +1,103 @@
 [
   {
+    "objectID": "projects/project3.html",
+    "href": "projects/project3.html",
+    "title": "Project 3",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nGBX2 (posterior hindbrain vs. midbrain boundary), HOX genes (rhombomere patterning, e.g., Hoxa/b clusters), PAX3 (dorsal hindbrain), KROX20 (rhombomeres 3/5), FGF8 (isthmus), EN1/EN2 (overlapping midbrain), IRX genes, dynamic enhancers in cerebellar primordium.\n\nChr1: En1\nChr2: Gbx2\n\n\nThis project focuses on E11.5 and E15.5 hindbrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during hindbrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project3.html#description",
+    "href": "projects/project3.html#description",
+    "title": "Project 3",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nGBX2 (posterior hindbrain vs. midbrain boundary), HOX genes (rhombomere patterning, e.g., Hoxa/b clusters), PAX3 (dorsal hindbrain), KROX20 (rhombomeres 3/5), FGF8 (isthmus), EN1/EN2 (overlapping midbrain), IRX genes, dynamic enhancers in cerebellar primordium.\n\nChr1: En1\nChr2: Gbx2\n\n\nThis project focuses on E11.5 and E15.5 hindbrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during hindbrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project3.html#available-data",
+    "href": "projects/project3.html#available-data",
+    "title": "Project 3",
+    "section": "Available data",
+    "text": "Available data\nData has been downloaded and prepared for you from Mouse Development Matrix: Hindbrain\nStudents should download project data (group projects) from: https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project3.tar.gz\nSetup in R\n\n# Download and extract project3 data into a folder named 'project3'\nurl &lt;- \"https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project3.tar.gz\"\ndest &lt;- \"project3.tar.gz\"\ndownload.file(url, dest, mode = \"wb\")\nutils::untar(dest, exdir = \"project3\")\n\nAfter extracting, a directory project3 appears with the following content:\n.\n├── ATAC_11half.bw\n├── ATAC_15half.bw\n├── atac_se.rds\n├── H3K27ac_11half.bw\n├── H3K27ac_15half.bw\n├── h3k27ac_se.rds\n├── H3K27me3_11half.bw\n├── H3K27me3_15half.bw\n├── h3k27me3_se.rds\n├── H3K4me1_11half.bw\n├── H3K4me1_15half.bw\n├── h3k4me1_se.rds\n├── H3K4me3_11half.bw\n├── H3K4me3_15half.bw\n├── h3k4me3_se.rds\n├── rna_se.rds\n├── WGBS_11half.bed.gz\n└── WGBS_15half.bed.gz\n├─ rna_se.rds — SummarizedExperiment for RNA-seq (gene counts / normalized expression)\n├─ atac_se.rds — SummarizedExperiment for ATAC-seq (peak counts / accessibility)\n├─ h3k4me3_se.rds, h3k27ac_se.rds, h3k4me1_se.rds, h3k27me3_se.rds — SummarizedExperiments for histone marks (peak-level assays)\n├─ *.bw (e.g., H3K4me3_11half.bw, ATAC_15half.bw) — bigWig signal tracks for visualization\n├─ WGBS_11half.bed.gz, WGBS_15half.bed.gz — CpG-level methylation (columns typically: chr, start, end, methylation_prop, coverage); treat as observation assay\nThe provided assay objects are RangedSummarizedExperiment (assay names: “counts”, “logCPM”) with rowRanges as GRanges and colData including sample/group fields; differential analyses have already been performed and are reflected in the supplied objects. Students should therefore focus on interpretation and integrative analysis rather than re-running DE tests."
+  },
+  {
+    "objectID": "projects/project3.html#day-1",
+    "href": "projects/project3.html#day-1",
+    "title": "Project 3",
+    "section": "Day 1",
+    "text": "Day 1\n\n\nExplore the dataset for the project:\n\nHow many samples are there?\nIs the data properly normalized?\nHow about a volcano plot to visualize the differences?\nHow many chromosomes are present in the data?\n\n\n\nATAC-seq data\n\nHow many peaks are there?\nHow many differentially accessible peaks are there between E11.5 and E15.5?\nWhat is the median width of the ATAC peaks?\n\n\n\nNormalizing and plotting\n\nUse correct normalization method for each dataset.\nCan you divide the EnrichedHeatmap for increse and decrease in accessibility regions?\nHow about also dividng EnrichedHeatmap for different annotations?\n\n\n\nChIP-seq data\n\nHow many peaks are there for each histone mark?\nHow many differentially enriched peaks are there between E11.5 and E15.5 for each mark?\nWhat is the median width of the peaks for each mark?\n\n\n\nRNA-seq data\n\nHow many genes are there?\nHow many differentially expressed genes are there between E11.5 and E15.5?\n\nGene Expression Boxplots: For key hindbrain transcription factors such as GBX2 and KROX20, create boxplots showing their normalized expression levels across samples for E11.5 and E15.5. Analyze and interpret the observed expression changes."
+  },
+  {
+    "objectID": "projects/project3.html#day-2",
+    "href": "projects/project3.html#day-2",
+    "title": "Project 3",
+    "section": "Day 2",
+    "text": "Day 2\n\n\noverlapMatrix\n\nAs done during the course exercise, make the overlapMatrix for your data.\nSimilar to Exercise 5, find different regions of activity in your data.\n\n\n\nIntegrative analysis\n\nCan you identify enhancers in the data?\nAre there any repressed promoters?\nCan you identify regions with increased chromatin accessibility, increased H3K27ac and H3K4me3, increased gene expression and which are less than 2.kb of TSS? what would you call these regions?"
+  },
+  {
+    "objectID": "projects/project3.html#day-3",
+    "href": "projects/project3.html#day-3",
+    "title": "Project 3",
+    "section": "Day 3",
+    "text": "Day 3\n\nEnrichment analysis\n\nCan you find any enriched GO terms in the Gained Enhancer regions in E15.5 compared to E11.5?\nCan you find any enriched GO terms in the Repressed Promoter regions in E15?\nWhat biological significant GO terms did you find in these regions? Do they make sense in the context of development?"
+  },
+  {
+    "objectID": "projects/project3.html#advanced-analysis",
+    "href": "projects/project3.html#advanced-analysis",
+    "title": "Project 3",
+    "section": "Advanced analysis",
+    "text": "Advanced analysis\n\nFor En2, which category applies (e.g., Silent at E15.5)?\nObtain overlapMatrix from other brain region from your colleagues.\nMerge overlapMatrices from all three regions to compare co-occurring signals.\nGenerate shared vs. unique regulatory regions (e.g., Venn diagram of gained enhancers).\nAre there region-specific regulatory programs distinguishing forebrain/midbrain/hindbrain projects?"
+  },
+  {
+    "objectID": "projects/project1.html",
+    "href": "projects/project1.html",
+    "title": "Project 1",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nFOXG1 (rostral/ventral identity), PAX6 (dorsal pallium/cortex patterning), EMX2, LHX2, OTX1/OTX2 (anterior neural plate/forebrain vs. midbrain boundary), NR2F1/COUP-TFI, SP8, MEIS2, ARX, DMRT3/DMRT5, SOX2/SOX3 (progenitors), SOX4/SOX11 (neurogenesis commitment), DLX1/2/5/6 (ventral/subpallial GABAergic neurons).\n\nChr1: Foxg1\nChr2: Pax6, Lhx2\nChr5: Otx2 (critical for forebrain vs. midbrain separation; also active in ventral forebrain)\nChrX: Arx\n\n\nThis project focuses on E11.5 and E15.5 forebrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during forebrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project1.html#description",
+    "href": "projects/project1.html#description",
+    "title": "Project 1",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nFOXG1 (rostral/ventral identity), PAX6 (dorsal pallium/cortex patterning), EMX2, LHX2, OTX1/OTX2 (anterior neural plate/forebrain vs. midbrain boundary), NR2F1/COUP-TFI, SP8, MEIS2, ARX, DMRT3/DMRT5, SOX2/SOX3 (progenitors), SOX4/SOX11 (neurogenesis commitment), DLX1/2/5/6 (ventral/subpallial GABAergic neurons).\n\nChr1: Foxg1\nChr2: Pax6, Lhx2\nChr5: Otx2 (critical for forebrain vs. midbrain separation; also active in ventral forebrain)\nChrX: Arx\n\n\nThis project focuses on E11.5 and E15.5 forebrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during forebrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project1.html#available-data",
+    "href": "projects/project1.html#available-data",
+    "title": "Project 1",
+    "section": "Available data",
+    "text": "Available data\nData has been downloaded and prepared for you from Mouse Development Matrix: Forebrain\nStudents should download project data (group projects) from: https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project1.tar.gz\nSetup in R\n\n# Download and extract project1 data into a folder named 'project1'\nurl &lt;- \"https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project1.tar.gz\"\ndest &lt;- \"project1.tar.gz\"\ndownload.file(url, dest, mode = \"wb\")\nutils::untar(dest, exdir = \"project1\")\n\nAfter extracting, a directory project1 appears with the following content:\n.\n├── ATAC_11half.bw\n├── ATAC_15half.bw\n├── atac_se.rds\n├── H3K27ac_11half.bw\n├── H3K27ac_15half.bw\n├── h3k27ac_se.rds\n├── H3K27me3_11half.bw\n├── H3K27me3_15half.bw\n├── h3k27me3_se.rds\n├── H3K4me1_11half.bw\n├── H3K4me1_15half.bw\n├── h3k4me1_se.rds\n├── H3K4me3_11half.bw\n├── H3K4me3_15half.bw\n├── h3k4me3_se.rds\n├── rna_se.rds\n├── WGBS_11half.bed.gz\n└── WGBS_15half.bed.gz\n├─ rna_se.rds — SummarizedExperiment for RNA-seq (gene counts / normalized expression)\n├─ atac_se.rds — SummarizedExperiment for ATAC-seq (peak counts / accessibility)\n├─ h3k4me3_se.rds, h3k27ac_se.rds, h3k4me1_se.rds, h3k27me3_se.rds — SummarizedExperiments for histone marks (peak-level assays)\n├─ *.bw (e.g., H3K4me3_11half.bw, ATAC_15half.bw) — bigWig signal tracks for visualization\n├─ WGBS_11half.bed.gz, WGBS_15half.bed.gz — CpG-level methylation (columns typically: chr, start, end, methylation_prop, coverage); treat as observation assay\nThe provided assay objects are RangedSummarizedExperiment (assay names: “counts”, “logCPM”) with rowRanges as GRanges and colData including sample/group fields; differential analyses have already been performed and are reflected in the supplied objects. Students should therefore focus on interpretation and integrative analysis rather than re-running DE tests."
+  },
+  {
+    "objectID": "projects/project1.html#day-1",
+    "href": "projects/project1.html#day-1",
+    "title": "Project 1",
+    "section": "Day 1",
+    "text": "Day 1\n\n\nExplore the dataset for the project:\n\nHow many samples are there?\nIs the data properly normalized?\nHow about a volcano plot to visualize the differences?\nHow many chromosomes are present in the data?\n\n\n\nATAC-seq data\n\nHow many peaks are there?\nHow many differentially accessible peaks are there between E11.5 and E15.5?\nWhat is the median width of the ATAC peaks?\n\n\n\nNormalizing and plotting\n\nUse correct normalization method for each dataset.\nCan you divide the EnrichedHeatmap for increse and decrease in accessibility regions?\nHow about also dividng EnrichedHeatmap for different annotations?\n\n\n\nChIP-seq data\n\nHow many peaks are there for each histone mark?\nHow many differentially enriched peaks are there between E11.5 and E15.5 for each mark?\nWhat is the median width of the peaks for each mark?\n\n\n\nRNA-seq data\n\nHow many genes are there?\nHow many differentially expressed genes are there between E11.5 and E15.5?\n\nGene Expression Boxplots: For key forebrain transcription factors like FOXG1, PAX6, and EMX2, create boxplots showing their normalized expression levels across samples for E11.5 and E15.5. Analyze how their expression changes between these two developmental stages."
+  },
+  {
+    "objectID": "projects/project1.html#day-2",
+    "href": "projects/project1.html#day-2",
+    "title": "Project 1",
+    "section": "Day 2",
+    "text": "Day 2\n\n\noverlapMatrix\n\nAs done during the course exercise, make the overlapMatrix for your data.\nSimilar to Exercise 5, find different regions of activity in your data.\n\n\n\nIntegrative analysis\n\nCan you identify enhancers in the data?\nAre there any repressed promoters?\nCan you identify regions with increased chromatin accessibility, increased H3K27ac and H3K4me3, increased gene expression and which are less than 2.kb of TSS? what would you call these regions?"
+  },
+  {
+    "objectID": "projects/project1.html#day-3",
+    "href": "projects/project1.html#day-3",
+    "title": "Project 1",
+    "section": "Day 3",
+    "text": "Day 3\n\nEnrichment analysis\n\nCan you find any enriched GO terms in the Gained Enhancer regions in E15.5 compared to E11.5?\nCan you find any enriched GO terms in the Repressed Promoter regions in E15?\nWhat biological significant GO terms did you find in these regions? Do they make sense in the context of development?"
+  },
+  {
+    "objectID": "projects/project1.html#advanced-analysis",
+    "href": "projects/project1.html#advanced-analysis",
+    "title": "Project 1",
+    "section": "Advanced analysis",
+    "text": "Advanced analysis\n\nHow many gained enhancers near Pax6/Lhx2 appear from E11.5 to E15.5, and do they link to RNA-seq upregulation?\nObtain overlapMatrix from other brain region from your colleagues.\nMerge overlapMatrices from all three regions to compare co-occurring signals.\nGenerate shared vs. unique regulatory regions (e.g., Venn diagram of gained enhancers).\nAre there region-specific regulatory programs distinguishing forebrain/midbrain/hindbrain projects?"
+  },
+  {
     "objectID": "precourse_preparations.html",
     "href": "precourse_preparations.html",
     "title": "Precourse preparations",
@@ -656,5 +754,54 @@
     "title": "Introduction",
     "section": "",
     "text": "Each group has access to a shared working directory, which is mounted at the root level as /group_work/groupX (replace X with your group number).\nIn RStudio-server, you can view the contents of your group’s directory in the Files pane (bottom left). Click on the three dots (...) to navigate to /group_work/groupX and access or manage your project files."
+  },
+  {
+    "objectID": "projects/project2.html",
+    "href": "projects/project2.html",
+    "title": "Project 2",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nOTX2 (dorsal midbrain, boundary maintenance), EN1/EN2 (mid-hindbrain organizer), PAX2/5, LMX1A (floor plate/ventral dopaminergic progenitors), WNT1 (isthmus signaling), FGF8 (organizer), NEUROG1/2, NEUROD1/4 (neurogenesis), MSX2 (progenitors).\n\nChr1: En1\nChr2: En2, Pax2\nChr5: Otx2, Wnt1\n\n\nThis project focuses on E11.5 and E15.5 midbrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during midbrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project2.html#description",
+    "href": "projects/project2.html#description",
+    "title": "Project 2",
+    "section": "",
+    "text": "In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.\n\n\nOTX2 (dorsal midbrain, boundary maintenance), EN1/EN2 (mid-hindbrain organizer), PAX2/5, LMX1A (floor plate/ventral dopaminergic progenitors), WNT1 (isthmus signaling), FGF8 (organizer), NEUROG1/2, NEUROD1/4 (neurogenesis), MSX2 (progenitors).\n\nChr1: En1\nChr2: En2, Pax2\nChr5: Otx2, Wnt1\n\n\nThis project focuses on E11.5 and E15.5 midbrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during midbrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation."
+  },
+  {
+    "objectID": "projects/project2.html#available-data",
+    "href": "projects/project2.html#available-data",
+    "title": "Project 2",
+    "section": "Available data",
+    "text": "Available data\nMouse Development Matrix: Midbrain\nStudents should download project data (group projects) from: https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project1.tar.gz\nSetup in R\n\n# Download and extract project2 data into a folder named 'project2'\nurl &lt;- \"https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project2.tar.gz\"\ndest &lt;- \"project2.tar.gz\"\ndownload.file(url, dest, mode = \"wb\")\nutils::untar(dest, exdir = \"project2\")\n\nAfter extracting, a directory project2 appears with the following content:\n.\n├── ATAC_11half.bw\n├── ATAC_15half.bw\n├── atac_se.rds\n├── H3K27ac_11half.bw\n├── H3K27ac_15half.bw\n├── h3k27ac_se.rds\n├── H3K27me3_11half.bw\n├── H3K27me3_15half.bw\n├── h3k27me3_se.rds\n├── H3K4me1_11half.bw\n├── H3K4me1_15half.bw\n├── h3k4me1_se.rds\n├── H3K4me3_11half.bw\n├── H3K4me3_15half.bw\n├── h3k4me3_se.rds\n├── rna_se.rds\n├── WGBS_11half.bed.gz\n└── WGBS_15half.bed.gz\n├─ rna_se.rds — SummarizedExperiment for RNA-seq (gene counts / normalized expression)\n├─ atac_se.rds — SummarizedExperiment for ATAC-seq (peak counts / accessibility)\n├─ h3k4me3_se.rds, h3k27ac_se.rds, h3k4me1_se.rds, h3k27me3_se.rds — SummarizedExperiments for histone marks (peak-level assays)\n├─ *.bw (e.g., H3K4me3_11half.bw, ATAC_15half.bw) — bigWig signal tracks for visualization\n├─ WGBS_11half.bed.gz, WGBS_15half.bed.gz — CpG-level methylation (columns typically: chr, start, end, methylation_prop, coverage); treat as observation assay\nThe provided assay objects are RangedSummarizedExperiment (assay names: “counts”, “logCPM”) with rowRanges as GRanges and colData including sample/group fields; differential analyses have already been performed and are reflected in the supplied objects. Students should therefore focus on interpretation and integrative analysis rather than re-running DE tests."
+  },
+  {
+    "objectID": "projects/project2.html#day-1",
+    "href": "projects/project2.html#day-1",
+    "title": "Project 2",
+    "section": "Day 1",
+    "text": "Day 1\n\n\nExplore the dataset for the project:\n\nHow many samples are there?\nIs the data properly normalized?\nHow about a volcano plot to visualize the differences?\nHow many chromosomes are present in the data?\n\n\n\nATAC-seq data\n\nHow many peaks are there?\nHow many differentially accessible peaks are there between E11.5 and E15.5?\nWhat is the median width of the ATAC peaks?\n\n\n\nNormalizing and plotting\n\nUse correct normalization method for each dataset.\nCan you divide the EnrichedHeatmap for increse and decrease in accessibility regions?\nHow about also dividng EnrichedHeatmap for different annotations?\n\n\n\nChIP-seq data\n\nHow many peaks are there for each histone mark?\nHow many differentially enriched peaks are there between E11.5 and E15.5 for each mark?\nWhat is the median width of the peaks for each mark?\n\n\n\nRNA-seq data\n\nHow many genes are there?\nHow many differentially expressed genes are there between E11.5 and E15.5?\n\nKey Gene Expression Boxplots: Create boxplots showing the normalized expression of OTX2 and EN1 across the samples for both E11.5 and E15.5. Discuss if these expression profiles match their known roles in midbrain development."
+  },
+  {
+    "objectID": "projects/project2.html#day-2",
+    "href": "projects/project2.html#day-2",
+    "title": "Project 2",
+    "section": "Day 2",
+    "text": "Day 2\n\n\noverlapMatrix\n\nAs done during the course exercise, make the overlapMatrix for your data.\nSimilar to Exercise 5, find different regions of activity in your data.\n\n\n\nIntegrative analysis\n\nCan you identify enhancers in the data?\nAre there any repressed promoters?\nCan you identify regions with increased chromatin accessibility, increased H3K27ac and H3K4me3, increased gene expression and which are less than 2.kb of TSS? what would you call these regions?"
+  },
+  {
+    "objectID": "projects/project2.html#day-3",
+    "href": "projects/project2.html#day-3",
+    "title": "Project 2",
+    "section": "Day 3",
+    "text": "Day 3\n\nEnrichment analysis\n\nCan you find any enriched GO terms in the Gained Enhancer regions in E15.5 compared to E11.5?\nCan you find any enriched GO terms in the Repressed Promoter regions in E15?\nWhat biological significant GO terms did you find in these regions? Do they make sense in the context of development?"
+  },
+  {
+    "objectID": "projects/project2.html#advanced-analysis",
+    "href": "projects/project2.html#advanced-analysis",
+    "title": "Project 2",
+    "section": "Advanced analysis",
+    "text": "Advanced analysis\n\nFor En1, which category fits (e.g., Repressed at E15.5)?\nObtain overlapMatrix from other brain region from your colleagues.\nMerge overlapMatrices from all three regions to compare co-occurring signals.\nGenerate shared vs. unique regulatory regions (e.g., Venn diagram of gained enhancers).\nAre there region-specific regulatory programs distinguishing forebrain/midbrain/hindbrain projects?"
   }
 ]

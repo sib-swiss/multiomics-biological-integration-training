@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.27">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Project 1 – Biology-informed Integration and Visualization of Multiomics Data</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,8 +17,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
@@ -41,8 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-416d0afab5eaf77b6e3abee7d4113ad9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -68,21 +98,13 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-<!-- Cookie Consent & Matomo Tracking -->
-<script src="assets/cookie-consent.js"></script>
-<!-- End Matomo Code -->
-
-
+}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<!-- Cookie Consent & Matomo Tracking --><script src="assets/cookie-consent.js"></script><!-- End Matomo Code -->
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Biology-informed Integration and Visualization of Multiomics Data</span>
@@ -94,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -110,8 +132,8 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 1</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-1">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-1">
+<li>
     <a class="dropdown-item" href="../day1/day1-1_dataset.html">
  <span class="dropdown-text">Exercise 1</span></a>
   </li>  
@@ -124,13 +146,13 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Exercise 3</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-2" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 2</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-2">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-2">
+<li>
     <a class="dropdown-item" href="../day2/day2-1_overlap_matrix.html">
  <span class="dropdown-text">Exercise 4</span></a>
   </li>  
@@ -143,24 +165,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Exercise 6</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-day-3" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">day 3</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-day-3">
+<li>
     <a class="dropdown-item" href="../day3/day3-1_enrichment_analysis.html">
  <span class="dropdown-text">Exercise 7</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">projects</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">
+<li>
     <a class="dropdown-item" href="../projects/introduction.html">
  <span class="dropdown-text">Introduction</span></a>
   </li>  
@@ -177,22 +199,20 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Project 3</span></a>
   </li>  
     </ul>
-  </li>
+</li>
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sib-swiss/multiomics-biological-integration-training"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -200,29 +220,33 @@ ul.task-list li input[type="checkbox"] {
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="../assets/SIB_LogoQ_GBv.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a>
+  <ul class="collapse">
+<li><a href="#forebrain" id="toc-forebrain" class="nav-link" data-scroll-target="#forebrain">Forebrain</a></li>
+  </ul>
+</li>
+  <li><a href="#available-data" id="toc-available-data" class="nav-link" data-scroll-target="#available-data">Available data</a></li>
+  <li><a href="#day-1" id="toc-day-1" class="nav-link" data-scroll-target="#day-1">Day 1</a></li>
+  <li><a href="#day-2" id="toc-day-2" class="nav-link" data-scroll-target="#day-2">Day 2</a></li>
+  <li><a href="#day-3" id="toc-day-3" class="nav-link" data-scroll-target="#day-3">Day 3</a></li>
+  <li><a href="#advanced-analysis" id="toc-advanced-analysis" class="nav-link" data-scroll-target="#advanced-analysis">Advanced analysis</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Project 1</h1>
 </div>
 
@@ -237,14 +261,137 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><section id="description" class="level2"><h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>In mouse embryonic brain development at E11.5 (early neural tube patterning and initial regionalization) and E15.5 (mid-neurogenesis, progenitor expansion, and early differentiation), brain regionalization into forebrain (prosencephalon/telencephalon/diencephalon), midbrain (mesencephalon), and hindbrain (rhombencephalon) relies on key signaling centers (e.g., mid-hindbrain boundary/isthmus) and transcription factors (TFs). These TFs are encoded on various chromosomes, with no single chromosome dominating the process—development involves distributed genetic networks across the genome.</p>
+<section id="forebrain" class="level3"><h3 class="anchored" data-anchor-id="forebrain">Forebrain</h3>
+<section id="major-tfs-and-genes-at-e11.5e15.5" class="level4"><h4 class="anchored" data-anchor-id="major-tfs-and-genes-at-e11.5e15.5">Major TFs and genes at E11.5–E15.5</h4>
+<p>FOXG1 (rostral/ventral identity), PAX6 (dorsal pallium/cortex patterning), EMX2, LHX2, OTX1/OTX2 (anterior neural plate/forebrain vs.&nbsp;midbrain boundary), NR2F1/COUP-TFI, SP8, MEIS2, ARX, DMRT3/DMRT5, SOX2/SOX3 (progenitors), SOX4/SOX11 (neurogenesis commitment), DLX1/2/5/6 (ventral/subpallial GABAergic neurons).</p>
+</section><section id="important-chromosomes-examples-of-key-genes" class="level4"><h4 class="anchored" data-anchor-id="important-chromosomes-examples-of-key-genes">Important chromosomes (examples of key genes):</h4>
+<pre><code>Chr1: Foxg1
+Chr2: Pax6, Lhx2
+Chr5: Otx2 (critical for forebrain vs. midbrain separation; also active in ventral forebrain)
+ChrX: Arx</code></pre>
+</section><section id="at-e11.5-strong-anterior-posterior-a-p-and-dorsal-ventral-d-v-gradients-establish-pallialsubpallial-domains." class="level4"><h4 class="anchored" data-anchor-id="at-e11.5-strong-anterior-posterior-a-p-and-dorsal-ventral-d-v-gradients-establish-pallialsubpallial-domains.">At E11.5: Strong anterior-posterior (A-P) and dorsal-ventral (D-V) gradients establish pallial/subpallial domains.</h4>
+</section><section id="at-e15.5-neurogenesis-ramps-up-enhancers-active-in-forebrain-show-dynamic-chromatin-e.g.-h3k27ach3k4me1-linked-to-these-tfs." class="level4"><h4 class="anchored" data-anchor-id="at-e15.5-neurogenesis-ramps-up-enhancers-active-in-forebrain-show-dynamic-chromatin-e.g.-h3k27ach3k4me1-linked-to-these-tfs.">At E15.5: Neurogenesis ramps up; enhancers active in forebrain show dynamic chromatin (e.g., H3K27ac/H3K4me1) linked to these TFs.</h4>
+<p>This project focuses on E11.5 and E15.5 forebrain samples. WGBS should be treated as an observation-level assay (CpG-level methylation proportions with coverage) and represented as BSseq/GenomicRatioSet or a CpG BED with methylation and coverage prior to integration. Students will integrate RNA-seq, ATAC-seq, WGBS, and histone modification (H3K4me3, H3K27ac, H3K27me3, H3K4me1) data to identify regulatory programs and epigenomic changes during forebrain development. Deliverables: an analysis report, figures highlighting differential expression/peaks/methylation, and a short presentation.</p>
+</section></section></section><section id="available-data" class="level2"><h2 class="anchored" data-anchor-id="available-data">Available data</h2>
+<p>Data has been downloaded and prepared for you from <a href="https://www.encodeproject.org/mouse-development-matrix/?type=Experiment&amp;status=released&amp;related_series.@type=OrganismDevelopmentSeries&amp;replicates.library.biosample.organism.scientific_name=Mus+musculus#forebrain">Mouse Development Matrix: Forebrain</a></p>
+<p>Students should download project data (group projects) from: https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project1.tar.gz</p>
+<p>Setup in R</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Download and extract project1 data into a folder named 'project1'</span></span>
+<span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://multiomics-biological-integration-training.s3.eu-central-1.amazonaws.com/project1.tar.gz"</span></span>
+<span><span class="va">dest</span> <span class="op">&lt;-</span> <span class="st">"project1.tar.gz"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="va">url</span>, <span class="va">dest</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span>
+<span><span class="fu">utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html">untar</a></span><span class="op">(</span><span class="va">dest</span>, exdir <span class="op">=</span> <span class="st">"project1"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>After extracting, a directory project1 appears with the following content:</p>
+<pre><code>.
+├── ATAC_11half.bw
+├── ATAC_15half.bw
+├── atac_se.rds
+├── H3K27ac_11half.bw
+├── H3K27ac_15half.bw
+├── h3k27ac_se.rds
+├── H3K27me3_11half.bw
+├── H3K27me3_15half.bw
+├── h3k27me3_se.rds
+├── H3K4me1_11half.bw
+├── H3K4me1_15half.bw
+├── h3k4me1_se.rds
+├── H3K4me3_11half.bw
+├── H3K4me3_15half.bw
+├── h3k4me3_se.rds
+├── rna_se.rds
+├── WGBS_11half.bed.gz
+└── WGBS_15half.bed.gz</code></pre>
+<pre><code>├─ rna_se.rds — SummarizedExperiment for RNA-seq (gene counts / normalized expression)
+├─ atac_se.rds — SummarizedExperiment for ATAC-seq (peak counts / accessibility)
+├─ h3k4me3_se.rds, h3k27ac_se.rds, h3k4me1_se.rds, h3k27me3_se.rds — SummarizedExperiments for histone marks (peak-level assays)
+├─ *.bw (e.g., H3K4me3_11half.bw, ATAC_15half.bw) — bigWig signal tracks for visualization
+├─ WGBS_11half.bed.gz, WGBS_15half.bed.gz — CpG-level methylation (columns typically: chr, start, end, methylation_prop, coverage); treat as observation assay</code></pre>
+<p>The provided assay objects are <code>RangedSummarizedExperiment</code> (assay names: “counts”, “logCPM”) with <code>rowRanges</code> as <code>GRanges</code> and <code>colData</code> including sample/group fields; differential analyses have already been performed and are reflected in the supplied objects. Students should therefore focus on interpretation and integrative analysis rather than re-running DE tests.</p>
+</section><section id="day-1" class="level2"><h2 class="anchored" data-anchor-id="day-1">Day 1</h2>
+<ul>
+<li>
+<p>Explore the dataset for the project:</p>
+<ul>
+<li>How many samples are there?</li>
+<li>Is the data properly normalized?</li>
+<li>How about a volcano plot to visualize the differences?</li>
+<li>How many chromosomes are present in the data?</li>
+</ul>
+</li>
+<li>
+<p>ATAC-seq data</p>
+<ul>
+<li>How many peaks are there?</li>
+<li>How many differentially accessible peaks are there between E11.5 and E15.5?</li>
+<li>What is the median width of the ATAC peaks?</li>
+</ul>
+</li>
+<li>
+<p>Normalizing and plotting</p>
+<ul>
+<li>Use correct normalization method for each dataset.</li>
+<li>Can you divide the <code>EnrichedHeatmap</code> for increse and decrease in accessibility regions?</li>
+<li>How about also dividng <code>EnrichedHeatmap</code> for different annotations?</li>
+</ul>
+</li>
+<li>
+<p>ChIP-seq data</p>
+<ul>
+<li>How many peaks are there for each histone mark?</li>
+<li>How many differentially enriched peaks are there between E11.5 and E15.5 for each mark?</li>
+<li>What is the median width of the peaks for each mark?</li>
+</ul>
+</li>
+<li>
+<p>RNA-seq data</p>
+<ul>
+<li>How many genes are there?</li>
+<li>How many differentially expressed genes are there between E11.5 and E15.5?</li>
+<li>
+<strong>Gene Expression Boxplots:</strong> For key forebrain transcription factors like <code>FOXG1</code>, <code>PAX6</code>, and <code>EMX2</code>, create boxplots showing their normalized expression levels across samples for E11.5 and E15.5. Analyze how their expression changes between these two developmental stages.</li>
+</ul>
+</li>
+</ul></section><section id="day-2" class="level2"><h2 class="anchored" data-anchor-id="day-2">Day 2</h2>
+<ul>
+<li>
+<p><code>overlapMatrix</code></p>
+<ul>
+<li>As done during the course exercise, make the <code>overlapMatrix</code> for your data.</li>
+<li>Similar to <a href="https://sib-swiss.github.io/multiomics-biological-integration-training/day2/day2-2_atac_rna.html">Exercise 5</a>, find different regions of activity in your data.</li>
+</ul>
+</li>
+<li>
+<p>Integrative analysis</p>
+<ul>
+<li>Can you identify enhancers in the data?</li>
+<li>Are there any repressed promoters?</li>
+<li>Can you identify regions with increased chromatin accessibility, increased H3K27ac and H3K4me3, increased gene expression and which are less than 2.kb of TSS? what would you call these regions?</li>
+</ul>
+</li>
+</ul></section><section id="day-3" class="level2"><h2 class="anchored" data-anchor-id="day-3">Day 3</h2>
+<ul>
+<li>Enrichment analysis
+<ul>
+<li>Can you find any enriched GO terms in the Gained Enhancer regions in E15.5 compared to E11.5?</li>
+<li>Can you find any enriched GO terms in the Repressed Promoter regions in E15?</li>
+<li>What biological significant GO terms did you find in these regions? Do they make sense in the context of development?</li>
+</ul>
+</li>
+</ul></section><section id="advanced-analysis" class="level2"><h2 class="anchored" data-anchor-id="advanced-analysis">Advanced analysis</h2>
+<ul>
+<li>How many gained enhancers near Pax6/Lhx2 appear from E11.5 to E15.5, and do they link to RNA-seq upregulation?</li>
+<li>Obtain <code>overlapMatrix</code> from other brain region from your colleagues.</li>
+<li>Merge <code>overlapMatrices</code> from all three regions to compare co-occurring signals.</li>
+<li>Generate shared vs.&nbsp;unique regulatory regions (e.g., Venn diagram of gained enhancers).</li>
+<li>Are there region-specific regulatory programs distinguishing forebrain/midbrain/hindbrain projects?</li>
+</ul>
 
 
-
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -645,7 +792,6 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-
 
 
 
