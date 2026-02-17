@@ -239,6 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link" data-scroll-target="#load-libraries">Load Libraries</a></li>
   <li><a href="#atac-se-object" id="toc-atac-se-object" class="nav-link" data-scroll-target="#atac-se-object">ATAC SE object</a></li>
   <li><a href="#atac-peaks-info" id="toc-atac-peaks-info" class="nav-link" data-scroll-target="#atac-peaks-info">ATAC peaks info</a></li>
+  <li><a href="#volcanoplot-to-observe-differentially-accessible-peaks" id="toc-volcanoplot-to-observe-differentially-accessible-peaks" class="nav-link" data-scroll-target="#volcanoplot-to-observe-differentially-accessible-peaks">Volcanoplot to observe differentially accessible peaks</a></li>
   <li><a href="#taking-1000-bp-around-the-mid-of-atac-peaks" id="toc-taking-1000-bp-around-the-mid-of-atac-peaks" class="nav-link" data-scroll-target="#taking-1000-bp-around-the-mid-of-atac-peaks">Taking 1000 bp around the mid of ATAC-peaks</a></li>
   <li><a href="#normalizing-data-for-plotting" id="toc-normalizing-data-for-plotting" class="nav-link" data-scroll-target="#normalizing-data-for-plotting">Normalizing data for plotting</a></li>
   <li><a href="#enriched-heatmap" id="toc-enriched-heatmap" class="nav-link" data-scroll-target="#enriched-heatmap">Enriched heatmap</a></li>
@@ -293,7 +294,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gUtils</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rtracklayer</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/circlize">circlize</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/GenomicRanges">GenomicRanges</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/GenomicRanges">GenomicRanges</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="atac-se-object" class="level2"><h2 class="anchored" data-anchor-id="atac-se-object">ATAC SE object</h2>
 <p>Here we load the <code>SummarizedExperiment</code> for the ATAC-seq data</p>
@@ -378,17 +380,140 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">rd_atac</span> <span class="op">&lt;-</span> <span class="va">rd_atac</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">rd_atac</span><span class="op">$</span><span class="va">logFC</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">0.5</span> <span class="op">&amp;</span> <span class="va">rd_atac</span><span class="op">$</span><span class="va">qvalue</span> <span class="op">&lt;=</span> <span class="fl">0.1</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">colnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/Vector-class.html">elementMetadata</a></span><span class="op">(</span><span class="va">rd_atac</span><span class="op">)</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/paste.html">paste</a></span><span class="op">(</span><span class="st">"ATAC"</span>, <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">colnames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/Vector-class.html">elementMetadata</a></span><span class="op">(</span><span class="va">rd_atac</span><span class="op">)</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section><section id="volcanoplot-to-observe-differentially-accessible-peaks" class="level2"><h2 class="anchored" data-anchor-id="volcanoplot-to-observe-differentially-accessible-peaks">Volcanoplot to observe differentially accessible peaks</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">rd_atac</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  seqnames   start     end width strand
+1     chr1 3670547 3672665  2119      *
+2     chr1 4332510 4332710   201      *
+3     chr1 4491755 4492573   819      *
+4     chr1 4571186 4572423  1238      *
+5     chr1 4785062 4786325  1264      *
+6     chr1 5232000 5233386  1387      *
+                                      ATAC_annotation ATAC_geneChr
+1                                    Promoter (&lt;=1kb)            1
+2 Intron (ENSMUST00000208660.1/19888, intron 3 of 29)            1
+3                                    Promoter (1-2kb)            1
+4                                   Distal Intergenic            1
+5                                    Promoter (&lt;=1kb)            1
+6                                   Distal Intergenic            1
+  ATAC_geneStart ATAC_geneEnd ATAC_geneLength ATAC_geneStrand ATAC_geneId
+1        3214482      3671498          457017               2      497097
+2        4344146      4360314           16169               2       19888
+3        4492465      4493735            1271               2       20671
+4        4491390      4497354            5965               2       20671
+5        4773206      4785710           12505               2       27395
+6        5083164      5099777           16614               1      108664
+     ATAC_transcriptId ATAC_distanceToTSS       ATAC_ENSEMBL ATAC_SYMBOL
+1 ENSMUST00000070533.4                  0 ENSMUSG00000051951        Xkr4
+2 ENSMUST00000027032.5              27604 ENSMUSG00000025900         Rp1
+3 ENSMUST00000191939.1               1162 ENSMUSG00000025902       Sox17
+4 ENSMUST00000192650.5             -73832 ENSMUSG00000025902       Sox17
+5 ENSMUST00000130201.7                  0 ENSMUSG00000033845      Mrpl15
+6 ENSMUST00000192142.1             148836 ENSMUSG00000033793     Atp6v1h
+                                    ATAC_GENENAME  ATAC_anno ATAC_logFC
+1               X-linked Kx blood group related 4   Promoter  0.6029841
+2                  retinitis pigmentosa 1 (human)     Intron  0.8557477
+3           SRY (sex determining region Y)-box 17   Promoter -0.6209259
+4           SRY (sex determining region Y)-box 17 Intergenic -0.5110459
+5             mitochondrial ribosomal protein L15   Promoter  0.5409079
+6 ATPase, H+ transporting, lysosomal V1 subunit H Intergenic -2.5017799
+  ATAC_logCPM     ATAC_F  ATAC_PValue  ATAC_qvalue
+1   10.453783  41.784460 6.584528e-08 4.819830e-07
+2    5.184242   3.683714 6.135165e-02 9.287853e-02
+3    7.134690   9.145224 4.123677e-03 8.385399e-03
+4    8.908847  15.156883 3.271580e-04 8.671152e-04
+5    8.634686  15.088922 3.360576e-04 8.826341e-04
+6    8.555241 257.544409 3.686136e-20 3.369128e-17</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html">rownames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/paste.html">paste</a></span><span class="op">(</span><span class="st">"region"</span>, <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/nrow.html">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         seqnames   start     end width strand
+region_1     chr1 3670547 3672665  2119      *
+region_2     chr1 4332510 4332710   201      *
+region_3     chr1 4491755 4492573   819      *
+region_4     chr1 4571186 4572423  1238      *
+region_5     chr1 4785062 4786325  1264      *
+region_6     chr1 5232000 5233386  1387      *
+                                             ATAC_annotation ATAC_geneChr
+region_1                                    Promoter (&lt;=1kb)            1
+region_2 Intron (ENSMUST00000208660.1/19888, intron 3 of 29)            1
+region_3                                    Promoter (1-2kb)            1
+region_4                                   Distal Intergenic            1
+region_5                                    Promoter (&lt;=1kb)            1
+region_6                                   Distal Intergenic            1
+         ATAC_geneStart ATAC_geneEnd ATAC_geneLength ATAC_geneStrand
+region_1        3214482      3671498          457017               2
+region_2        4344146      4360314           16169               2
+region_3        4492465      4493735            1271               2
+region_4        4491390      4497354            5965               2
+region_5        4773206      4785710           12505               2
+region_6        5083164      5099777           16614               1
+         ATAC_geneId    ATAC_transcriptId ATAC_distanceToTSS       ATAC_ENSEMBL
+region_1      497097 ENSMUST00000070533.4                  0 ENSMUSG00000051951
+region_2       19888 ENSMUST00000027032.5              27604 ENSMUSG00000025900
+region_3       20671 ENSMUST00000191939.1               1162 ENSMUSG00000025902
+region_4       20671 ENSMUST00000192650.5             -73832 ENSMUSG00000025902
+region_5       27395 ENSMUST00000130201.7                  0 ENSMUSG00000033845
+region_6      108664 ENSMUST00000192142.1             148836 ENSMUSG00000033793
+         ATAC_SYMBOL                                   ATAC_GENENAME  ATAC_anno
+region_1        Xkr4               X-linked Kx blood group related 4   Promoter
+region_2         Rp1                  retinitis pigmentosa 1 (human)     Intron
+region_3       Sox17           SRY (sex determining region Y)-box 17   Promoter
+region_4       Sox17           SRY (sex determining region Y)-box 17 Intergenic
+region_5      Mrpl15             mitochondrial ribosomal protein L15   Promoter
+region_6     Atp6v1h ATPase, H+ transporting, lysosomal V1 subunit H Intergenic
+         ATAC_logFC ATAC_logCPM     ATAC_F  ATAC_PValue  ATAC_qvalue
+region_1  0.6029841   10.453783  41.784460 6.584528e-08 4.819830e-07
+region_2  0.8557477    5.184242   3.683714 6.135165e-02 9.287853e-02
+region_3 -0.6209259    7.134690   9.145224 4.123677e-03 8.385399e-03
+region_4 -0.5110459    8.908847  15.156883 3.271580e-04 8.671152e-04
+region_5  0.5409079    8.634686  15.088922 3.360576e-04 8.826341e-04
+region_6 -2.5017799    8.555241 257.544409 3.686136e-20 3.369128e-17</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define thresholds</span></span>
+<span><span class="va">fc_cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.5</span></span>
+<span><span class="va">q_cutoff</span> <span class="op">&lt;-</span> <span class="fl">0.1</span></span>
+<span></span>
+<span><span class="co"># Count significant peaks</span></span>
+<span><span class="va">up_sig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="va">fc_cutoff</span> <span class="op">&amp;</span> <span class="va">df</span><span class="op">$</span><span class="va">ATAC_qvalue</span> <span class="op">&lt;</span> <span class="va">q_cutoff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">down_sig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&lt;</span> <span class="op">-</span><span class="va">fc_cutoff</span> <span class="op">&amp;</span> <span class="va">df</span><span class="op">$</span><span class="va">ATAC_qvalue</span> <span class="op">&lt;</span> <span class="va">q_cutoff</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ATAC_logFC</span>, y <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">ATAC_qvalue</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"TRUE"</span> <span class="op">=</span> <span class="st">"red"</span>, <span class="st">"FALSE"</span> <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Log2 Fold Change"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"-Log10 Q-value"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Volcano Plot of Differentially Accessible Peaks"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="va">fc_cutoff</span>, <span class="va">fc_cutoff</span><span class="op">)</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, color <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">q_cutoff</span><span class="op">)</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">ATAC_qvalue</span><span class="op">)</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Up: "</span>, <span class="va">up_sig</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="op">-</span><span class="fl">2</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log10</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">ATAC_qvalue</span><span class="op">)</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"Down: "</span>, <span class="va">down_sig</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"blue"</span>, hjust <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section><section id="taking-1000-bp-around-the-mid-of-atac-peaks" class="level2"><h2 class="anchored" data-anchor-id="taking-1000-bp-around-the-mid-of-atac-peaks">Taking 1000 bp around the mid of ATAC-peaks</h2>
 <p>Most of the peaks are around 1000 bp wide. We can check that</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span><span class="op">(</span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">atac</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lengths.html">lengths</a></span><span class="op">(</span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">atac</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1031</code></pre>
 </div>
 </div>
 <p>For plotting the data, we can hence consider 1000 bp around the <strong>peak-mid</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Finding mid of all peaks</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Finding mid of all peaks</span></span>
 <span><span class="va">mid_peaks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/gUtils/man/gr.mid.html">gr.mid</a></span><span class="op">(</span><span class="va">rd_atac</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># adding names to peaks to give them identity</span></span>
@@ -397,7 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="normalizing-data-for-plotting" class="level2"><h2 class="anchored" data-anchor-id="normalizing-data-for-plotting">Normalizing data for plotting</h2>
 <p><code>bigWig</code> files are compressed, indexed, binary format used for efficiently displaying continuous data, like genomic signal data, in genome browsers. Here, we read in ATAC-seq <code>bigWig</code> files, filters the data to specific chromosomes, normalizes signal intensity around genomic regions of interest (peak centers), and saves the resulting matrices for downstream visualization.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"data"</span>, pattern <span class="op">=</span> <span class="st">"ATAC"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">list.files</a></span><span class="op">(</span><span class="st">"data"</span>, pattern <span class="op">=</span> <span class="st">"ATAC"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">atac_files</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">"\\.bw"</span>, replacement <span class="op">=</span> <span class="st">""</span>, x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/path.html">basename</a></span><span class="op">(</span><span class="va">atac_files</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">atac_bw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/lapply.html">lapply</a></span><span class="op">(</span><span class="va">atac_files</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">a</span> <span class="op">&lt;-</span> <span class="fu">rtracklayer</span><span class="fu">::</span><span class="fu">import</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -407,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>bigWig</code> files are represented as <code>GRanges</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac_bw</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">atac_bw</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ATAC_11half
 GRanges object with 6354084 ranges and 1 metadata column:
@@ -448,7 +573,7 @@ GRanges object with 5356375 ranges and 1 metadata column:
 </div>
 <p>Next, we calculate the normalized signals into the area of our interest. Please check <code><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/normalizeToMatrix.html">?normalizeToMatrix</a></code> for details of this function</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat_AS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/lapply.html">lapply</a></span><span class="op">(</span><span class="va">atac_bw</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat_AS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/lapply.html">lapply</a></span><span class="op">(</span><span class="va">atac_bw</span>, FUN <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/normalizeToMatrix.html">normalizeToMatrix</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">mid_peaks</span>,</span>
 <span>    extend <span class="op">=</span> <span class="fl">1000</span>,</span>
 <span>    value_column <span class="op">=</span> <span class="st">"score"</span>,</span>
@@ -458,12 +583,9 @@ GRanges object with 5356375 ranges and 1 metadata column:
 <span>    smooth <span class="op">=</span> <span class="cn">T</span>,</span>
 <span>    background <span class="op">=</span> <span class="fl">0</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Width of `target` are all 1, `include_target` is set to `FALSE`.
-Warning: Width of `target` are all 1, `include_target` is set to `FALSE`.</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mat_AS</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mat_AS</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ATAC_11half
 Normalize x to mid_peaks:
@@ -483,7 +605,7 @@ Normalize x to mid_peaks:
 </section><section id="enriched-heatmap" class="level2"><h2 class="anchored" data-anchor-id="enriched-heatmap">Enriched heatmap</h2>
 <p><strong>Enriched heatmap</strong> is a special type of heatmap which visualizes the enrichment of genomic signals over specific target regions.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span>mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span> <span class="op">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span>mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span>mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_15half</span>, name <span class="op">=</span> <span class="st">"E15.5"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>The automatically generated colors map from the 1^st and 99^th of the
@@ -501,7 +623,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -511,7 +633,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <p>Let’s work on one data for now.</p>
 <section id="changind-color-and-size" class="level3"><h3 class="anchored" data-anchor-id="changind-color-and-size">Changind color and size</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span></span>
 <span>  mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>,    <span class="co"># normalized matrix</span></span>
 <span>  name <span class="op">=</span> <span class="st">"E11.5"</span>,              <span class="co"># Name for the plot</span></span>
 <span>  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span>,     <span class="co"># We change the colors for low to high values</span></span>
@@ -520,7 +642,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -528,7 +650,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <p>You may wonder why the color looks so light. The reason is in coverage values in ATAC, there exist some extreme values, which results in extreme value in <code>normalizedMatrix</code>.</p>
 </section><section id="color-based-on-quantile" class="level3"><h3 class="anchored" data-anchor-id="color-based-on-quantile">Color based on quantile</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Taking data between 1 and 99 percentile</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Taking data between 1 and 99 percentile</span></span>
 <span><span class="va">col_fun</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/circlize/man/colorRamp2.html">colorRamp2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.99</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/EnrichedHeatmap/man/EnrichedHeatmap.html">EnrichedHeatmap</a></span><span class="op">(</span></span>
@@ -540,14 +662,14 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section><section id="changing-some-other-aesthetics" class="level3"><h3 class="anchored" data-anchor-id="changing-some-other-aesthetics">Changing some other aesthetics</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># We first change the color legent of the plot to show only 3 values</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># We first change the color legent of the plot to show only 3 values</span></span>
 <span><span class="va">vmin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">vmax</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.99</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">vmid</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">vmin</span> <span class="op">+</span> <span class="va">vmax</span><span class="op">)</span> <span class="op">/</span> <span class="fl">2</span></span>
@@ -589,7 +711,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -597,7 +719,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 </section><section id="split-the-enriched-heatmap-based-on-logfc-values" class="level3"><h3 class="anchored" data-anchor-id="split-the-enriched-heatmap-based-on-logfc-values">Split the Enriched heatmap based on <code>logFC</code> values</h3>
 <p>Although we see some signal here, but it might be a good idea to split the heatmap into the regions which gained and lost accessibility.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_change</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span>, yes <span class="op">=</span> <span class="st">"Increased accessibility"</span>, no <span class="op">=</span> <span class="st">"Decreased accessibility"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_change</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span>, yes <span class="op">=</span> <span class="st">"Increased accessibility"</span>, no <span class="op">=</span> <span class="st">"Decreased accessibility"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">split_change</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">split_change</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -607,7 +729,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
                    peak_4                    peak_5                    peak_6 
 "Decreased accessibility" "Increased accessibility" "Decreased accessibility" </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define cluster colors</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Define cluster colors</span></span>
 <span><span class="va">cluster_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Increased accessibility"</span> <span class="op">=</span> <span class="st">"red"</span>, <span class="st">"Decreased accessibility"</span> <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Make sure split_change has levels matching the color names</span></span>
@@ -646,7 +768,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 <span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -654,7 +776,7 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 </section><section id="make-a-function-to-make-this-heatmap" class="level3"><h3 class="anchored" data-anchor-id="make-a-function-to-make-this-heatmap">Make a function to make this heatmap</h3>
 <p>As you know we have at least 2 samples as of now. It will be a good idea to create a <code>function</code> to make this heatmap.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">make_EH</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">norm_mat</span>, <span class="va">heatmap_cols</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span>, <span class="va">split_rows</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">hm_name</span>, <span class="va">col_fill</span> <span class="op">=</span> <span class="st">"#ffcccc"</span><span class="op">)</span><span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">make_EH</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">norm_mat</span>, <span class="va">heatmap_cols</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"white"</span>, <span class="st">"red"</span><span class="op">)</span>, <span class="va">split_rows</span> <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">hm_name</span>, <span class="va">col_fill</span> <span class="op">=</span> <span class="st">"#ffcccc"</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">col_fun</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/circlize/man/colorRamp2.html">colorRamp2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">norm_mat</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span>, <span class="fl">0.99</span><span class="op">)</span><span class="op">)</span>, <span class="va">heatmap_cols</span><span class="op">)</span>  </span>
 <span>  </span>
 <span>  <span class="va">vmin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">norm_mat</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.01</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
@@ -697,13 +819,13 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 </div>
 </section><section id="make-enriched-heatmaps-for-both-atac-samples" class="level3"><h3 class="anchored" data-anchor-id="make-enriched-heatmaps-for-both-atac-samples">Make Enriched Heatmaps for both ATAC samples</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">eh_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, split_rows <span class="op">=</span> <span class="va">split_change</span>, hm_name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">eh_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, split_rows <span class="op">=</span> <span class="va">split_change</span>, hm_name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span></span>
 <span><span class="va">eh_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_15half</span>, split_rows <span class="op">=</span> <span class="va">split_change</span>, hm_name <span class="op">=</span> <span class="st">"E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -711,16 +833,12 @@ Use `suppressMessages()` to turn off this message.</code></pre>
 </section></section><section id="another-way-to-make-annotations-for-split" class="level2"><h2 class="anchored" data-anchor-id="another-way-to-make-annotations-for-split">Another way to make annotations for split</h2>
 <p>It is probably a good idea to represent clusters with colors, instead of text</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">eh_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, hm_name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">eh_11h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_11half</span>, hm_name <span class="op">=</span> <span class="st">"E11.5"</span><span class="op">)</span></span>
 <span><span class="va">eh_15h</span> <span class="op">&lt;-</span> <span class="fu">make_EH</span><span class="op">(</span>norm_mat <span class="op">=</span> <span class="va">mat_AS</span><span class="op">$</span><span class="va">ATAC_15half</span>, hm_name <span class="op">=</span> <span class="st">"E15.5"</span>, col_fill <span class="op">=</span> <span class="st">"#e6fff2"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">row_order_eh</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/row_order-dispatch.html">row_order</a></span><span class="op">(</span><span class="va">eh_11h</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The heatmap has not been initialized. You might have different results
-if you repeatedly execute this function, e.g. when row_km/column_km was
-set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">anno_hm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span></span>
+<span><span class="va">row_order_eh</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/row_order-dispatch.html">row_order</a></span><span class="op">(</span><span class="va">eh_11h</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">anno_hm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span></span>
 <span>  <span class="va">split_change</span>,</span>
 <span>  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span><span class="op">)</span>, </span>
 <span>  name <span class="op">=</span> <span class="st">"Change"</span>,</span>
@@ -735,7 +853,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_hm</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_change</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -756,7 +874,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno</span> <span class="op">&lt;-</span> <span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_anno</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno</span> <span class="op">&lt;-</span> <span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_anno</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -764,7 +882,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 <pre><code>      peak_1       peak_2       peak_3       peak_4       peak_5       peak_6 
   "Promoter"     "Intron"   "Promoter" "Intergenic"   "Promoter" "Intergenic" </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">anno_an</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span></span>
 <span>  <span class="va">split_anno</span>,</span>
@@ -781,7 +899,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_an</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_anno</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -805,7 +923,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/paste.html">paste</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_anno</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span>, yes <span class="op">=</span> <span class="st">"Inc"</span>, no <span class="op">=</span> <span class="st">"Dec"</span><span class="op">)</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/paste.html">paste</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_anno</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span>, yes <span class="op">=</span> <span class="st">"Inc"</span>, no <span class="op">=</span> <span class="st">"Dec"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">split_anno_dir</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">split_anno_dir</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -815,7 +933,7 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
           peak_5           peak_6 
   "Promoter Inc" "Intergenic Dec" </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno_dir</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Paired"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno_dir</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Paired"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">anno_an_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html">Heatmap</a></span><span class="op">(</span></span>
 <span>  <span class="va">split_anno_dir</span>,</span>
@@ -834,10 +952,10 @@ set. It is more suggested to do as `ht = draw(ht); row_order(ht)`.</code></pre>
 mapping. If this is not what you want, slightly change the number of
 colors, e.g. by adding one more color or removing a color.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_an_dir</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_anno_dir</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_an_dir</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_anno_dir</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -861,7 +979,7 @@ colors, e.g. by adding one more color or removing a color.</code></pre>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">split_anno_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>  Annotation <span class="op">=</span> <span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_anno</span>,</span>
 <span>  Direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">mid_peaks</span><span class="op">$</span><span class="va">ATAC_logFC</span> <span class="op">&gt;</span> <span class="fl">0</span>, yes <span class="op">=</span> <span class="st">"Inc"</span>, no <span class="op">=</span> <span class="st">"Dec"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
@@ -876,7 +994,7 @@ colors, e.g. by adding one more color or removing a color.</code></pre>
 5   Promoter       Inc
 6 Intergenic       Dec</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cols_an</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"blue"</span>, </span>
 <span>             <span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/unique.html">unique</a></span><span class="op">(</span><span class="va">split_anno_df</span><span class="op">$</span><span class="va">Annotation</span><span class="op">)</span><span class="op">)</span>, name <span class="op">=</span> <span class="st">"Set1"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
@@ -892,18 +1010,12 @@ colors, e.g. by adding one more color or removing a color.</code></pre>
 <span>  height <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fl">8</span>, <span class="st">"cm"</span><span class="op">)</span>,</span>
 <span>  row_order <span class="op">=</span> <span class="va">row_order_eh</span>,</span>
 <span>  row_title_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The input is a data frame-like object, convert it to a matrix.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Note: not all columns in the data frame are numeric. The data frame
-will be converted into a character matrix.</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_an_df</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_anno_dir</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/draw-dispatch.html">draw</a></span><span class="op">(</span><span class="va">anno_an_df</span> <span class="op">+</span> <span class="va">eh_11h</span> <span class="op">+</span> <span class="va">eh_15h</span>, split <span class="op">=</span> <span class="va">split_anno_dir</span>, merge_legend <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="day1-2_atac_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
